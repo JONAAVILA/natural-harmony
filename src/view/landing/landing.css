@@ -1,0 +1,33 @@
+.landing_section{
+    display: flex;
+    flex-direction: column;
+    h1{
+        position: relative;
+        margin: 0;
+        font-weight: 100;
+        font-size: 7rem;
+        display: flex;
+        flex-direction: column;
+    }
+}
+.box_heading_harmony{
+    position: relative;
+    margin-left: 100px;
+    width: 500px;
+    text-align: right;
+    margin-bottom: 100px;
+}
+.nia{
+    position: absolute;
+    top: -100px;
+}
+.box_heading_natural{
+    position: relative;
+    margin-right: 100px;
+    width: 500px;
+    text-align: left;
+}
+.ral{
+    position: absolute;
+    top: -100px;
+}
