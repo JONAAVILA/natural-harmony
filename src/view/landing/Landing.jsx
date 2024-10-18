@@ -1,3 +1,5 @@
+import Button from '../../components/button/Button';
+import Arrow from '../../components/icons/Arrow.icon';
 import './landing.css';
 
 const Landing = ()=>{
@@ -12,7 +14,13 @@ const Landing = ()=>{
                     <span className='armo' >ARMO</span>
                 </div>
                 <div className='nia' >
-                    <span>NIA</span>
+                    <div>
+                        <span>NIA</span>
+                        <span className='landing_button_rigth' >
+                            <Arrow/>
+                            <Button/>
+                        </span>
+                    </div>
                 </div>
             </h1>
         </section>

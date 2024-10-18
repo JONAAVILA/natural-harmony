@@ -68,3 +68,11 @@
     display: grid;
     align-items: flex-start;
 }
+.landing_button_rigth{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding-left: 20px;
+    width: 100%;
+    height: 100px;
+}
