@@ -22,10 +22,11 @@
     text-align: left;
 }
 .ural::before{
-    content: 'clases de compose';
+    content: 'clases de yoga';
     position: absolute;
     font-size: small;
-    bottom: -20px;
+    bottom: -21px;
+    left: 5px;
 }
 .heading_box_center{
     height: 100%;
@@ -38,20 +39,20 @@
     position: relative;
 }
 .armo::before{
-    content: 'clases de yoga';
+    content: 'clases de compose';
     position: absolute;
     font-size: small;
     top: -12px;
-    right: 10px;
+    right: 0;
 }
 .armo::after{
     content: '';
     position: absolute;
     right: -20px;
-    top: -20px;
+    top: -10px;
     width: 140px;
     height: 140px;
-    background-image: url('../../assets/yoga.png');
+    background-image: url('../../assets/three.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
