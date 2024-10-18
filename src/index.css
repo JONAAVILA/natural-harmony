@@ -18,7 +18,24 @@ body {
   justify-content: center;
   height: 100vh;
 }
-
+input{
+  outline: none;
+  border: solid 2px #ffffff;
+  height: 20px;
+  padding: 11px;
+  width: 300px;
+  margin: 3px;
+  color: #ffffff;
+  background-color: transparent;
+  border-radius: 20px;
+}
+input::placeholder{
+  color: #ffffff;
+}
+button{
+  outline: none;
+  border: none;
+}
 h1 {
   font-family: "Lato", sans-serif;
   font-weight: 400;
