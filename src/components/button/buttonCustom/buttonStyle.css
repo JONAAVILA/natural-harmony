@@ -1,0 +1,18 @@
+.button_gradient{
+    height: 45px;
+    width: 220px;
+    border-radius: 25px;
+    color: #003550;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    cursor: pointer;
+}
+.gradient{
+    background:radial-gradient(circle 220px at left top,#60B49E,#41AFCB,#A1CED9);
+    color: #FFFEFF;
+}
+.default{
+    background-color: #FFFEFF;
+}

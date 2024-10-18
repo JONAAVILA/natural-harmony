@@ -1,6 +1,6 @@
-import './button.css';
+import './buttonCircle.css';
 
-const Button = ()=>{
+const ButtonCircle = ()=>{
     return(
         <button className='custumButton' >
             GO
@@ -8,4 +8,4 @@ const Button = ()=>{
     )
 }
 
-export default Button
+export default ButtonCircle

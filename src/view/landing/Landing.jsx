@@ -1,5 +1,5 @@
-import Button from '../../components/button/Button';
-import Arrow from '../../components/icons/Arrow.icon';
+import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
+import Arrow from '../../components/icons/arrow/Arrow.icon';
 import './landing.css';
 
 const Landing = ()=>{
@@ -9,7 +9,7 @@ const Landing = ()=>{
                 <div className='nat' >
                     <div>
                         <span className='landing_button_left' >
-                            <Button/>
+                            <ButtonCircle/>
                             <Arrow side={'left'} />
                         </span>
                         <span>NAT</span>
@@ -24,7 +24,7 @@ const Landing = ()=>{
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
                             <Arrow/>
-                            <Button/>
+                            <ButtonCircle/>
                         </span>
                     </div>
                 </div>
