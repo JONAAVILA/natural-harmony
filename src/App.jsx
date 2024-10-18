@@ -4,9 +4,9 @@ import Landing from './view/landing/Landing'
 function App() {
 
   return (
-    <>
+    <div className='app'>
       <Landing/>
-    </>
+    </div>
   )
 }
 

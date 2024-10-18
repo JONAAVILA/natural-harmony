@@ -1,33 +1,63 @@
 .landing_section{
-    display: flex;
-    flex-direction: column;
+    height: 450px;
+    display: grid;
+    align-items: center;
     h1{
-        position: relative;
-        margin: 0;
-        font-weight: 100;
-        font-size: 7rem;
-        display: flex;
-        flex-direction: column;
+        font-size: 8rem;
+        display: grid;
+        height: 100%;
+        grid-template-columns: repeat(3,1fr);
     }
 }
-.box_heading_harmony{
-    position: relative;
-    margin-left: 100px;
-    width: 500px;
+.natu{
+    height: 100%;
+    display: grid;
+    align-items: flex-end;
     text-align: right;
-    margin-bottom: 100px;
 }
-.nia{
-    position: absolute;
-    top: -100px;
-}
-.box_heading_natural{
+.ural{
     position: relative;
-    margin-right: 100px;
-    width: 500px;
+    padding: 0;
+    width: 100%;
     text-align: left;
 }
-.ral{
+.ural::before{
+    content: 'clases de compose';
     position: absolute;
-    top: -100px;
+    font-size: small;
+    bottom: -20px;
+}
+.heading_box_center{
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.armo{
+    position: relative;
+}
+.armo::before{
+    content: 'clases de yoga';
+    position: absolute;
+    font-size: small;
+    top: -12px;
+    right: 10px;
+}
+.armo::after{
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -20px;
+    width: 140px;
+    height: 140px;
+    background-image: url('../../assets/yoga.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.nia{
+    height: 100%;
+    display: grid;
+    align-items: flex-start;
 }
