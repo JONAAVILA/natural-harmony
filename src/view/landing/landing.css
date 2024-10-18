@@ -22,9 +22,12 @@
     text-align: left;
 }
 .ural::before{
-    content: 'clases de yoga';
+    content: 'CLASES DE YOGA';
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     position: absolute;
-    font-size: small;
+    font-size: 12px;
     bottom: -21px;
     left: 5px;
 }
@@ -39,11 +42,14 @@
     position: relative;
 }
 .armo::before{
-    content: 'clases de compose';
+    content: 'CLASES DE COMPOSE';
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     position: absolute;
-    font-size: small;
+    font-size: 12px;
     top: -12px;
-    right: 0;
+    right: -5px;
 }
 .armo::after{
     content: '';
