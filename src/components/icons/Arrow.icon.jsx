@@ -1,7 +1,9 @@
-const Arrow = ()=>{
+import './arrow.icon.css';
+
+const Arrow = ({side})=>{
     return(
         <svg
-            className="arro_icon"
+            className={`arro_icon ${side}`}
             width="100"  
             height="120"  
             viewBox="0 0 24 24"  

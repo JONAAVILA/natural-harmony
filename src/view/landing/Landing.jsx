@@ -6,8 +6,14 @@ const Landing = ()=>{
     return(
         <section className='landing_section' >
             <h1>
-                <div className='natu' >
-                    <span>NAT</span>
+                <div className='nat' >
+                    <div>
+                        <span className='landing_button_left' >
+                            <Button/>
+                            <Arrow side={'left'} />
+                        </span>
+                        <span>NAT</span>
+                    </div>
                 </div>
                 <div className='heading_box_center' >
                     <span className='ural' >URAL</span>

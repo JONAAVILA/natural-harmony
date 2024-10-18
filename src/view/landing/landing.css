@@ -9,7 +9,7 @@
         grid-template-columns: repeat(3,1fr);
     }
 }
-.natu{
+.nat{
     height: 100%;
     display: grid;
     align-items: flex-end;
@@ -73,6 +73,14 @@
     align-items: center;
     justify-content: left;
     padding-left: 20px;
+    width: 100%;
+    height: 100px;
+}
+.landing_button_left{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 20px;
     width: 100%;
     height: 100px;
 }
