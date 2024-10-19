@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '../../modals/alerts/Alert.modal.jsx'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
 import sendCode from '../../../adapters/sendCode.js';
-import Button from '../../button/buttonCustom/Button.jsx';
+import ButtonCircle from '../../button/buttonCircle/ButtonCircle.jsx';
 
 const LoginForm = ()=>{
     const navigate = useNavigate()
@@ -75,7 +75,10 @@ const LoginForm = ()=>{
                         {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
                     </div>
                 </div>
-                <Button color={'gradient'} children={'ingresar'} />
+                <div>
+                    
+                    <ButtonCircle/>
+                </div>
             </form>
         </div>
     )
