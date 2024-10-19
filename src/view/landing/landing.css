@@ -3,7 +3,6 @@
     display: grid;
     align-items: center;
     h1{
-        font-size: 8rem;
         display: grid;
         height: 100%;
         grid-template-columns: repeat(3,1fr);
@@ -25,7 +24,7 @@
     content: 'CLASES DE YOGA';
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    font-style: normal;
+    font-style: italic;
     position: absolute;
     font-size: 12px;
     bottom: -21px;
@@ -45,7 +44,7 @@
     content: 'CLASES DE COMPOSE';
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    font-style: normal;
+    font-style: italic;
     position: absolute;
     font-size: 12px;
     top: -12px;
