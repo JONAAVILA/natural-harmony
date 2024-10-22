@@ -1,6 +1,6 @@
 .container_signin{
     display: flex;
-    align-items: center;
+    align-items: flex;
     justify-content: space-between;
 }
 .trar{

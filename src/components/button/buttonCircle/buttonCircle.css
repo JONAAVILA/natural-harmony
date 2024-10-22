@@ -23,3 +23,6 @@
 .horizontal{
     flex-direction: row-reverse;
 }
+.vertical{
+    flex-direction: column;
+}
