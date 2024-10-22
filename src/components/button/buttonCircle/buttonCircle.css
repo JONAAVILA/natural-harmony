@@ -1,9 +1,14 @@
+.box_custumButton{
+    display: flex;
+    align-items: center;
+}
 .custumButton{
     display: flex;
     align-items: center;
     justify-content: center;
     width: 60px;
     height: 60px;
+    margin: 0;
     border: 1px solid #ffffff;
     border-radius: 50%;
     background:transparent;
@@ -11,4 +16,7 @@
 }
 .custumButton:hover{
     background-color: #70707079;
+}
+.horizontal{
+    flex-direction: row-reverse;
 }

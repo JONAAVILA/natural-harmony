@@ -76,7 +76,7 @@ const LoginForm = ()=>{
                     </div>
                 </div>
                 <div>
-                    <ButtonCircle/>
+                    <ButtonCircle children={'login'} />
                 </div>
             </form>
         </div>

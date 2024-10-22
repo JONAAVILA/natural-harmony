@@ -1,10 +1,14 @@
 import './buttonCircle.css';
+import Arrow from '../../icons/arrow/Arrow.icon';
 
-const ButtonCircle = ()=>{
+const ButtonCircle = ({children,sideArrow,flip})=>{
     return(
-        <button className='custumButton' >
-            GO
-        </button>
+        <div className={`box_custumButton ${flip}`} >
+            <Arrow side={sideArrow} />
+            <button className='custumButton' >
+                {children}
+            </button>
+        </div>
     )
 }
 

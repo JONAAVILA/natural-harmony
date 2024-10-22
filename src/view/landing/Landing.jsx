@@ -9,8 +9,7 @@ const Landing = ()=>{
                 <div className='nat' >
                     <div>
                         <span className='landing_button_left' >
-                            <ButtonCircle/>
-                            <Arrow side={'left'} />
+                            <ButtonCircle children={'go'} sideArrow={'left'} flip={'horizontal'} />
                         </span>
                         <span>NAT</span>
                     </div>
@@ -23,8 +22,7 @@ const Landing = ()=>{
                     <div>
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
-                            <Arrow/>
-                            <ButtonCircle/>
+                            <ButtonCircle children={'go'} />
                         </span>
                     </div>
                 </div>
