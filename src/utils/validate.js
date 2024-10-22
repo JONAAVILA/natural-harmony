@@ -44,10 +44,10 @@ export const validateUser = Yup.object().shape({
         .matches('^[a-zA-Z0-9.,]+$','Formato inválido')
         .required('La dirección es requerida'),
     number:Yup.string()
-        .min(3,'Numero demasiado corto')
-        .max(10,'Numero demasiado largo')
-        .matches('^[a-zA-Z0-9]+$','Formato inválido')
-        .required('El numero es requrido'),
+        .min(3,'Inválido')
+        .max(10,'Inválido')
+        .matches('^[a-zA-Z0-9]+$','Inválido')
+        .required('Requrido'),
     location:Yup.string()
         .min(3,'Localidad demasiado corto')
         .max(40,'Localidad demasiado largo')

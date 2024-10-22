@@ -46,9 +46,6 @@ const CreateUser = ()=>{
             className="create_form"
             >
                 <div className="create_box_form" >
-                    <h3>
-                        DATOS PERSONALES
-                    </h3>
                     <input
                         type="text"
                         id="name"
@@ -87,9 +84,6 @@ const CreateUser = ()=>{
                     </div>
                 </div>
                 <div className="create_box_form" >
-                    <h3>
-                        DATOS DE CONTACTO
-                    </h3>
                     <input
                         type="text"
                         id="phone"
@@ -102,29 +96,37 @@ const CreateUser = ()=>{
                     <div className="form_user_error" >
                         {formik.touched.phone && formik.errors.phone && <p>{formik.errors.phone}</p>}
                     </div>
-                    <input
-                        type="text"
-                        id="address"
-                        name="address"
-                        value={formik.values.address}
-                        placeholder="calle"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <div className="form_user_error" >
-                        {formik.touched.address && formik.errors.address && <p>{formik.errors.address}</p>}
-                    </div>
-                    <input
-                        type="text"
-                        id="number"
-                        name="number"
-                        value={formik.values.number}
-                        placeholder="numero"
-                        onChange={formik.handleChange}
-                        onBlur={formik.handleBlur}
-                    />
-                    <div className="form_user_error" >
-                        {formik.touched.number && formik.errors.number && <p>{formik.errors.number}</p>}
+                    <div className='box_input_address' >
+                        <div>
+                            <input
+                                className='input_address'
+                                type="text"
+                                id="address"
+                                name="address"
+                                value={formik.values.address}
+                                placeholder="calle"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                            <div className="form_user_error" >
+                                {formik.touched.address && formik.errors.address && <p>{formik.errors.address}</p>}
+                            </div>
+                        </div>
+                        <div>
+                            <input
+                                className='input_number'
+                                type="text"
+                                id="number"
+                                name="number"
+                                value={formik.values.number}
+                                placeholder="numero"
+                                onChange={formik.handleChange}
+                                onBlur={formik.handleBlur}
+                            />
+                            <div className="form_user_error" >
+                                {formik.touched.number && formik.errors.number && <p>{formik.errors.number}</p>}
+                            </div>
+                        </div>
                     </div>
                     <input
                         type="text"
