@@ -1,3 +1,4 @@
+import CreateUser from '../../components/forms/signin/signin.form';
 import './signin.css';
 
 const Signin = ()=>{
@@ -10,7 +11,7 @@ const Signin = ()=>{
                 <br/>
                 <span className='se' >SE</span>
             </h1>
-
+            <CreateUser/>
         </section>
     )
 }

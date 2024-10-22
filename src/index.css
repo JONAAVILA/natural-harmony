@@ -11,6 +11,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+:root::-webkit-scrollbar{
+  width: 4px;
+}
+:root::-webkit-scrollbar-thumb{
+  width: 4px;
+  border-radius: 6px;
+  background-color: #ffffff;
+}
 body {
   margin: 0;
   display: grid;
