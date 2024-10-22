@@ -25,15 +25,14 @@
     background-size: contain;
 }
 .subheading_login{
-    width: 100%;
     margin-top: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 .box_input_login{
     margin-top: 10px;
-    width: 100%;
     display: flex;
     align-items: flex-start;
 }

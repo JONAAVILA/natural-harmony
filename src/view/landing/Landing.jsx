@@ -12,7 +12,7 @@ const Landing = ()=>{
                                 sideArrow={'left'} 
                                 flip={'horizontal'} 
                             >
-                                go
+                                yoga
                             </ButtonCircle>
                         </span>
                         <span>NAT</span>
@@ -27,7 +27,7 @@ const Landing = ()=>{
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
                             <ButtonCircle>
-                                go
+                                compose
                             </ButtonCircle>
                         </span>
                     </div>
