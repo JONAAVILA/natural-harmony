@@ -1,8 +1,8 @@
-import './singin.css';
+import './signin.css';
 
-const Singin = ()=>{
+const Signin = ()=>{
     return(
-        <section className='container_singin' >
+        <section className='container_signin' >
             <h1>
                 <span>REGIS</span>
                 <br/>
@@ -10,9 +10,9 @@ const Singin = ()=>{
                 <br/>
                 <span className='se' >SE</span>
             </h1>
-            
+
         </section>
     )
 }
 
-export default Singin
+export default Signin

@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Landing from './view/landing/Landing'
 import Login from './view/login/Login'
-import Singin from './view/singin/Singin'
+import Signin from './view/signin/Signin'
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Landing/>} />
         <Route path='/login' element={<Login/>} />
-        <Route path='/singin' element={<Singin/>} />
+        <Route path='/signin' element={<Signin/>} />
       </Routes>
     </BrowserRouter>
   )
