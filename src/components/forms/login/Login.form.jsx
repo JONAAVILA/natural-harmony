@@ -76,7 +76,6 @@ const LoginForm = ()=>{
                     </div>
                 </div>
                 <div>
-                    
                     <ButtonCircle/>
                 </div>
             </form>

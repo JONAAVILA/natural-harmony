@@ -9,9 +9,11 @@ const Login = ()=>{
                 <span>INGRE</span>
                 <span className='sar' >SAR</span>
             </h1>
-            <div>
+            <div className='subheading_login' >
                 <h2>QUE BUENO VERTE</h2>
                 <h3>VAMOS A PEDIRTE UNOS DATOS</h3>
+            </div>
+            <div className='box_input_login' >
                 <LoginForm/>
             </div>
         </section>

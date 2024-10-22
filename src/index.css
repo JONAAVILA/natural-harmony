@@ -30,7 +30,17 @@ input{
   border-radius: 30px;
 }
 input::placeholder{
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 10px;
   color: #ffffff;
+  transition: all ease 200ms;
+}
+input:hover::placeholder{
+  transform: translateY(-10px);
+  opacity: 0;
 }
 button{
   outline: none;

@@ -1,3 +1,8 @@
+.section_login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .heading_login{
     display: flex;
     flex-direction: column;
@@ -19,8 +24,16 @@
     background-position: center;
     background-size: contain;
 }
-.section_login{
+.subheading_login{
+    width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+.box_input_login{
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
 }
