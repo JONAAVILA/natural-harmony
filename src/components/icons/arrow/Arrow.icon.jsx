@@ -4,8 +4,8 @@ const Arrow = ({side})=>{
     return(
         <svg
             className={`arro_icon ${side}`}
-            width="100"  
-            height="120"  
+            width="24"  
+            height="24"  
             viewBox="0 0 24 24"  
             fill="none"  
             stroke="currentColor"  
