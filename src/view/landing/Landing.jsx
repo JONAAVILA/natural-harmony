@@ -29,7 +29,7 @@ const Landing = ()=>{
                     <div>
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
-                            <Link to={'/sigin'} >
+                            <Link to={'/signin'} >
                                 <ButtonCircle>
                                     compose
                                 </ButtonCircle>
