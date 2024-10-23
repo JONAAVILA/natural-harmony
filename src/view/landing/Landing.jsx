@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
 import './landing.css';
 
@@ -8,12 +9,14 @@ const Landing = ()=>{
                 <div className='nat' >
                     <div>
                         <span className='landing_button_left' >
-                            <ButtonCircle
-                                sideArrow={'left'} 
-                                flip={'horizontal'} 
-                            >
-                                yoga
-                            </ButtonCircle>
+                            <Link to={'/login'} >
+                                <ButtonCircle
+                                    sideArrow={'left'} 
+                                    flip={'horizontal'} 
+                                >
+                                    yoga
+                                </ButtonCircle>
+                            </Link>
                         </span>
                         <span>NAT</span>
                     </div>
@@ -26,9 +29,11 @@ const Landing = ()=>{
                     <div>
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
-                            <ButtonCircle>
-                                compose
-                            </ButtonCircle>
+                            <Link to={'/sigin'} >
+                                <ButtonCircle>
+                                    compose
+                                </ButtonCircle>
+                            </Link>
                         </span>
                     </div>
                 </div>
