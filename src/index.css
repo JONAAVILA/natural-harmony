@@ -57,6 +57,7 @@ button{
   font-size: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
 }
 h1{
   margin-top: 5px;

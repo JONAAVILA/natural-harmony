@@ -38,9 +38,13 @@ const CreateUser = ()=>{
         }
     })
 
+    const handleModal = ()=>{
+        setmodal(!modal)
+    }
+
     return(
         <>
-            {modal && <ValidateCode/>}
+            {modal && <ValidateCode handleModal={handleModal} />}
             <form
             onSubmit={formik.handleSubmit}
             className="create_form"

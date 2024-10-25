@@ -1,0 +1,30 @@
+.container_email_modal{
+    z-index: 9;
+    position: fixed;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    backdrop-filter: blur(3px);
+}
+.container_email_modal:hover{
+    
+}
+.box_email_modal{
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 200px;
+    border-radius: 2rem;
+    background-color: #25252550;
+    backdrop-filter: blur(10px);
+}

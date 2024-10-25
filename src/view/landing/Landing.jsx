@@ -1,22 +1,29 @@
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
 import './landing.css';
+import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
 
 const Landing = ()=>{
+    const [modal, setmodal] = useState(false)
+
+    const handleModal = ()=>{
+        setmodal(!modal)
+    }
+
     return(
         <section className='landing_section' >
+            {modal && <ValidateEmail handleModal={handleModal} />}
             <h1>
                 <div className='nat' >
                     <div>
                         <span className='landing_button_left' >
-                            <Link to={'/login'} >
-                                <ButtonCircle
-                                    sideArrow={'left'} 
-                                    flip={'horizontal'} 
-                                >
-                                    yoga
-                                </ButtonCircle>
-                            </Link>
+                            <ButtonCircle
+                                sideArrow={'left'} 
+                                flip={'horizontal'} 
+                                path={'/login'}
+                            >
+                                yoga
+                            </ButtonCircle>
                         </span>
                         <span>NAT</span>
                     </div>
@@ -29,13 +36,13 @@ const Landing = ()=>{
                     <div>
                         <span>NIA</span>
                         <span className='landing_button_rigth' >
-                            <Link to={'/signin'} >
-                                <ButtonCircle>
-                                    compose
-                                </ButtonCircle>
-                            </Link>
+                            <ButtonCircle
+                                handleModal={handleModal}
+                            >
+                                compose
+                            </ButtonCircle>
                         </span>
-                    </div>
+                    </div>  
                 </div>
             </h1>
         </section>

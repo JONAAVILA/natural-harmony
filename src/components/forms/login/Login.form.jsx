@@ -2,7 +2,6 @@ import { useFormik } from 'formik';
 import './login.form.css';
 import { validateLogin } from '../../../utils/validate';
 import postLogin from '../../../adapters/postLogin.js';
-import LoadIcon from '../../icons/loader/LoadIcon.jsx'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Alert from '../../modals/alerts/Alert.modal.jsx'
@@ -10,9 +9,8 @@ import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
 import sendCode from '../../../adapters/sendCode.js';
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle.jsx';
 
-const LoginForm = ()=>{
+const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
-    const [loader, setloader] = useState(false)
     const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
 
@@ -23,7 +21,7 @@ const LoginForm = ()=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-            setloader(!loader)
+            handleLoader()
             const res = await postLogin(values)
             if(res === true){
                 navigate('/home')
@@ -34,14 +32,13 @@ const LoginForm = ()=>{
                 setmodal(!modal)
                 return
             }
-            setloader(false)
+            handleLoader()
             setalert('Clave o correo incorrecto')
         }
     })
     return(
         <div>
-            <div className='login_loader' >
-                {loader && <LoadIcon/>}
+            <div className='login_box_modal' >
                 {alert && <Alert children={alert} />}
                 {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
             </div>

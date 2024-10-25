@@ -24,6 +24,13 @@
     background-position: center;
     background-size: contain;
 }
+.loader_login{
+    z-index: -1;
+    position: absolute;
+    left: -25px;
+    bottom: -10px;
+
+}
 .subheading_login{
     margin-top: 10px;
     width: 100%;

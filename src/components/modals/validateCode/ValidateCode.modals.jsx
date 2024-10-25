@@ -9,9 +9,8 @@ import postUser from "../../../adapters/postUser"
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle';
 import LoadIcon from "../../icons/loader/LoadIcon"
 import './validateCode.modals.css'
-import postLogin from "../../../adapters/postLogin"
 
-const ValidateCode = ({validate,email,password})=>{
+const ValidateCode = ({validate,email,password,handleModal})=>{
     const user = useSelector(state => state.user)
     const [loader, setloader] = useState(false)
     const navigate = useNavigate()
@@ -23,7 +22,6 @@ const ValidateCode = ({validate,email,password})=>{
         validationSchema:validateCode,
         onSubmit: async (values)=>{
             setloader(!loader)
-
             const code = values.code
             const resConfirm = await confirmCode(code)
 
@@ -46,13 +44,13 @@ const ValidateCode = ({validate,email,password})=>{
 
     return(
         <>
-            <div className="code_container"/ >
+            <div className="code_container" onClick={handleModal} />
             <div className="code_box" >
-                <h1>valida tu código</h1>
+                <h2>VALIDA TU CODIGO</h2>
                 {email ? (
-                            <p>te lo enviamos a {email}, revisa tu casilla de spam 😎</p>
+                            <h3>te lo enviamos a {email}, revisa tu casilla de spam 😎</h3>
                         ):(
-                            <p>te lo enviamos a {user.email}, revisa tu casilla de spam 😎</p>
+                            <h3>te lo enviamos a {user.email}, revisa tu casilla de spam 😎</h3>
                         )
                     }
                 <form
@@ -72,7 +70,9 @@ const ValidateCode = ({validate,email,password})=>{
                             {loader && <LoadIcon size={35} />}
                         </div>
                     </div>
-                    <ButtonCircle type='submit' color={'natural'} />
+                    <ButtonCircle type='submit' color={'natural'}>
+                        check
+                    </ButtonCircle>
                 </form>
                 <div className="code_error" >
                     {formik.touched.code && formik.errors.code && <p>{formik.errors.code}</p>}
