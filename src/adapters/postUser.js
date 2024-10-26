@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// const URL = 'https://tienda-online-backend-riqf.onrender.com/singin'
-const URL = 'http://localhost:3000/singin'
+const URL = 'https://tienda-online-backend-riqf.onrender.com/singin'
+// const URL = 'http://localhost:3000/singin'
 
 export default async function postUser (values){
     try {
