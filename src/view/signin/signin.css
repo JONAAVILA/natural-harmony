@@ -3,6 +3,11 @@
     align-items: flex;
     justify-content: space-between;
 }
+.box_heading_signin{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .trar{
     position: relative;
     margin-left: 150px;
