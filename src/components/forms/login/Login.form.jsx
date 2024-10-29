@@ -73,7 +73,7 @@ const LoginForm = ({handleLoader})=>{
                     </div>
                 </div>
                 <div>
-                    <ButtonCircle children={'login'} />
+                    <ButtonCircle children={'login'} type='submit' />
                 </div>
             </form>
         </div>
