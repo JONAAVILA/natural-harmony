@@ -32,14 +32,15 @@ const LoginForm = ({handleLoader})=>{
                 setmodal(!modal)
                 return
             }
-            handleLoader()
             setalert('Clave o correo incorrecto')
+            handleLoader()
+            return
         }
     })
     return(
         <div>
             <div className='login_box_modal' >
-                {alert && <Alert children={alert} />}
+                {alert && <Alert>{alert}</Alert>}
                 {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
             </div>
             <form

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = 'http://localhost:3000/login'
+const URL = 'https://tienda-online-backend-riqf.onrender.com/login'
 
 export default async function postLogin(values){
     const user = {

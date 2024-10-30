@@ -1,4 +1,4 @@
-.container_email_modal{
+.container_alert_modal{
     z-index: 9;
     position: fixed;
     display: grid;
@@ -9,7 +9,7 @@
     transform: translate(-50%,-50%);
     backdrop-filter: blur(3px);
 }
-.box_email_modal{
+.box_alert_modal{
     position: fixed;
     z-index: 10;
     left: 50%;

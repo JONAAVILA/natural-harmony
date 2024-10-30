@@ -1,16 +1,14 @@
+import './alert.modal.css'
+
 const Alert = ({children})=>{
     return(
-        <span style={{
-            width:'400px',
-            height:'200px',
-            borderRadius:'20px',
-            display:'grid',
-            justifyContent:'center',
-            alignItems:'center',
-            background:'#ffffff'
-        }} >
-            <p>{children}</p>
-        </span>
+        <>
+            <div className='container_alert_modal'>
+            </div>
+            <div className='box_alert_modal' >
+                <p>{children}</p>
+            </div>
+        </>
     )
 }
 
