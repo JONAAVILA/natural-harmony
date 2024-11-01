@@ -6,9 +6,16 @@ import Navbar from './components/navbar/Navbar'
 import Home from './view/home/Home'
 import Error404 from './view/404/Error404'
 import Profile from './view/profile/Profile'
+import { useTranslation } from 'react-i18next'
 import './App.css'
 
 function App() {
+  const { t, i18n } = useTranslation()
+
+  const changeLenguage = (lng) =>{
+    i18n.changeLanguage(lng)
+  }
+
   return (
     <BrowserRouter>
       <Navbar/>
