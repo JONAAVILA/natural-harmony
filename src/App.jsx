@@ -18,10 +18,10 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Navbar/>
+      <Navbar handleLenguage={handleLenguage}  />
       <Routes>
         <Route path='/*' element={<Error404/>} />
-        <Route path='/' element={<Landing handleLenguage={handleLenguage} />} />
+        <Route path='/' element={<Landing/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signin' element={<Signin/>} />
         <Route path='/home' element={<Home/>} />

@@ -4,18 +4,19 @@ import './landing.css';
 import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
 import { useTranslation } from 'react-i18next';
 
-const Landing = ({handleLenguage})=>{
+const Landing = ()=>{
     const [modal, setmodal] = useState(false)
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
 
     const handleModal = ()=>{
         setmodal(!modal)
     }
 
+    const tittle = t('naturalArmonia').split(' ')
+
     return(
         <section className='landing_section' >
             {modal && <ValidateEmail handleModal={handleModal} />}
-            <h4>{t('natural_armonia')}</h4>
             <h1>
                 <div className='nat' >
                     <div>
@@ -28,23 +29,28 @@ const Landing = ({handleLenguage})=>{
                                 yoga
                             </ButtonCircle>
                         </span>
-                        <span>NAT</span>
+                        <span>{tittle[0].split('').slice(0,3)}</span>
                     </div>
                 </div>
                 <div className='heading_box_center' >
-                    <span className='ural' >URAL</span>
-                    <span className='armo' >ARMO</span>
+                    <span className={`ural ${t('clasesDeYoga')}`} >
+                        {tittle[0].split('').slice(3,7)}
+                    </span>
+                    <span className={`armo ${t('clasesDeCompose')}`} >
+                        {tittle[1].split('').slice(0,4)}
+                    </span>
                 </div>
                 <div className='nia' >
                     <div>
-                        <span>NIA</span>
+                        <span>
+                            {tittle[1].split('').slice(4,8)}
+                        </span>
                         <span className='landing_button_rigth' >
                             <ButtonCircle
                                 handleModal={handleModal}
                             >
-                                compose
+                                compost
                             </ButtonCircle>
-                            <button onClick={()=> handleLenguage('it')}  >change lenguage</button>
                         </span>
                     </div>  
                 </div>

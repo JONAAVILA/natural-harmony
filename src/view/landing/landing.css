@@ -30,6 +30,16 @@
     bottom: -21px;
     left: 5px;
 }
+.it::before{
+    content: 'LEZIONI DI YOGA';
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    position: absolute;
+    font-size: 12px;
+    bottom: -21px;
+    left: 5px;
+}
 .heading_box_center{
     height: 100%;
     display: flex;
@@ -41,7 +51,17 @@
     position: relative;
 }
 .armo::before{
-    content: 'CLASES DE COMPOSE';
+    content: 'CLASES DE COMPOST';
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    position: absolute;
+    font-size: 12px;
+    top: -12px;
+    right: -5px;
+}
+.armo_it::before{
+    content: 'LEZIONI DI COMPOST';
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-style: italic;

@@ -4,13 +4,16 @@ import { initReactI18next } from 'react-i18next'
 const resources = {
     es:{
         translation:{
-            natural_armonia:'NATURAL ARMONIA',
-
+            naturalArmonia:'NATURAL ARMONIA',
+            clasesDeYoga:'ural',
+            clasesDeCompose:'armo'
         }
     },
     it:{
         translation:{
-            natural_armonia:'ARMONIA NATURALE'
+            naturalArmonia:'ARMONIA NATURALE',
+            clasesDeYoga:'it',
+            clasesDeCompose:'armo_it'
         }
     }
 }
