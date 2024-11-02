@@ -12,7 +12,7 @@ import './App.css'
 function App() {
   const { t, i18n } = useTranslation()
 
-  const changeLenguage = (lng) =>{
+  const handleLenguage = (lng) =>{
     i18n.changeLanguage(lng)
   }
 
@@ -21,7 +21,7 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path='/*' element={<Error404/>} />
-        <Route path='/' element={<Landing/>} />
+        <Route path='/' element={<Landing handleLenguage={handleLenguage} />} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signin' element={<Signin/>} />
         <Route path='/home' element={<Home/>} />

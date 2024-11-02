@@ -2,9 +2,11 @@ import { useState } from 'react';
 import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
 import './landing.css';
 import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
+import { useTranslation } from 'react-i18next';
 
-const Landing = ()=>{
+const Landing = ({handleLenguage})=>{
     const [modal, setmodal] = useState(false)
+    const { t, i18n } = useTranslation()
 
     const handleModal = ()=>{
         setmodal(!modal)
@@ -13,6 +15,7 @@ const Landing = ()=>{
     return(
         <section className='landing_section' >
             {modal && <ValidateEmail handleModal={handleModal} />}
+            <h4>{t('natural_armonia')}</h4>
             <h1>
                 <div className='nat' >
                     <div>
@@ -41,6 +44,7 @@ const Landing = ()=>{
                             >
                                 compose
                             </ButtonCircle>
+                            <button onClick={()=> handleLenguage('it')}  >change lenguage</button>
                         </span>
                     </div>  
                 </div>
