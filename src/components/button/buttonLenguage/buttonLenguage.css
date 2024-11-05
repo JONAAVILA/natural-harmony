@@ -2,14 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px;
+    padding: 2px 4px 2px 4px;
     height: 30px;
     border-radius: 40PX;
     border: solid 1px; 
 }
 .button_lenguage{
     background-color: transparent;
-    margin-inline: 2px;
+    margin-right: 4px;
     padding: 0;
 }
 .box_lenguages{

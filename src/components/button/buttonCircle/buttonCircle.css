@@ -23,7 +23,7 @@
     transition: all ease 200ms;
 }
 .custumButton:hover{
-    background-color: #70707079;
+    background-color: #8A9B79;
 }
 .horizontal{
     flex-direction: row-reverse;

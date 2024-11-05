@@ -6,9 +6,14 @@
     border-radius: 50%;
     width: 28px;
     height: 28px;
+    transition: all ease 300ms;
 }
 .lenguage_letter{
     background-color: transparent;
     color: #ffffff;
     stroke-width: 1.5px;
+    transition: all ease 200ms;
+}
+.container_lenguage_icon:hover{
+    background-color: #8A9B79;
 }
