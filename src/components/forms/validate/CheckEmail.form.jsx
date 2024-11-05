@@ -57,7 +57,7 @@ const CheckEmail = ()=>{
                 }
             </div>
             <ButtonCircle type='submit' >
-                check
+                CHECK
             </ButtonCircle>
         </form>
     )

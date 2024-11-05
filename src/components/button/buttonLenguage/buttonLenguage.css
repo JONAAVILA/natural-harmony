@@ -1,0 +1,22 @@
+.container_lenguage_button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    height: 30px;
+    border-radius: 40PX;
+    border: solid 1px; 
+}
+.button_lenguage{
+    background-color: transparent;
+    margin-inline: 2px;
+    padding: 0;
+}
+.box_lenguages{
+    height: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-inline: 2px;
+}

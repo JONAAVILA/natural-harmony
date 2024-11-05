@@ -10,7 +10,7 @@ import { useTranslation } from 'react-i18next'
 import './App.css'
 
 function App() {
-  const { t, i18n } = useTranslation()
+  const { i18n } = useTranslation()
 
   const handleLenguage = (lng) =>{
     i18n.changeLanguage(lng)

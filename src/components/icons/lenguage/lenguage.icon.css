@@ -1,0 +1,14 @@
+.container_lenguage_icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #313131;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+}
+.lenguage_letter{
+    background-color: transparent;
+    color: #ffffff;
+    stroke-width: 1.5px;
+}

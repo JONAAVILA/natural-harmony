@@ -23,7 +23,7 @@
 .ural::before{
     content: 'CLASES DE YOGA';
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-style: italic;
     position: absolute;
     font-size: 12px;
@@ -33,7 +33,7 @@
 .it::before{
     content: 'LEZIONI DI YOGA';
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-style: italic;
     position: absolute;
     font-size: 12px;
@@ -53,7 +53,7 @@
 .armo::before{
     content: 'CLASES DE COMPOST';
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-style: italic;
     position: absolute;
     font-size: 12px;
@@ -63,7 +63,7 @@
 .armo_it::before{
     content: 'LEZIONI DI COMPOST';
     font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-weight: 500;
     font-style: italic;
     position: absolute;
     font-size: 12px;

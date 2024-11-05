@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Menu from '../icons/menu/Menu.icon'
 import './navbar.css'
+import ButtonLenguage from '../button/buttonLenguage/ButtonLenguage'
 
 const Navbar = ({handleLenguage})=>{
     return(
@@ -10,8 +11,7 @@ const Navbar = ({handleLenguage})=>{
                 <div className='navbar_home' />
             </Link>
             <div>
-                <button onClick={()=>handleLenguage('it')} >italiano</button>
-                <button onClick={()=>handleLenguage('es')} >español</button>
+               <ButtonLenguage handleLenguage={handleLenguage} />
             </div>
         </aside>
     )

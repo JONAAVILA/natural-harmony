@@ -2,6 +2,7 @@
     margin-inline: -10px;
     height: 100px;
     width: 100px;
+    stroke-width: .3px;
 }
 .left{
     transform: rotate(180deg);

@@ -44,22 +44,22 @@ footer{
 }
 input{
   outline: none;
-  border: solid 1px #ffffff;
+  border: solid 1px #313131;
   height: 20px;
   padding: 11px;
   width: 250px;
   margin: 1px;
-  color: #ffffff;
+  color: #313131;
   background-color: transparent;
   border-radius: 30px;
 }
 input::placeholder{
   position: absolute;
   font-family: "Poppins", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   font-style: normal;
   font-size: 11px;
-  color: #ffffff;
+  color: #313131;
   transition: all ease 200ms;
 }
 input:hover::placeholder{
@@ -69,7 +69,6 @@ input:hover::placeholder{
 button{
   font-family: "Poppins", sans-serif;
   font-weight: 100;
-  font-style: italic;
   font-size: 10px;
   outline: none;
   border: none;
@@ -97,7 +96,7 @@ h3{
   margin-top: 5px;
   margin-bottom: 5px;
   font-family: "Poppins", sans-serif;
-  font-weight: 200;
+  font-weight: 500;
   font-style: italic;
   line-height: 0.9;
   font-size: 11px;

@@ -178,7 +178,7 @@ const CreateUser = ()=>{
                         type='submit' 
                         flip={'vertical'}
                     >
-                        crear
+                        CREAR
                     </ButtonCircle>
                 </div>
             </form>
