@@ -26,7 +26,7 @@ const Landing = ()=>{
                                 flip={'horizontal'} 
                                 path={'/login'}
                             >
-                                yoga
+                                YOGA
                             </ButtonCircle>
                         </span>
                         <span>{tittle[0].split('').slice(0,3)}</span>
@@ -49,7 +49,7 @@ const Landing = ()=>{
                             <ButtonCircle
                                 handleModal={handleModal}
                             >
-                                compost
+                                COMPOST
                             </ButtonCircle>
                         </span>
                     </div>  

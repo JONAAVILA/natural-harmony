@@ -17,8 +17,9 @@
     font-weight: 500;
     border-radius: 50%;
     background:transparent;
+    color: #313131;
+    border: solid 1px #313131;
     transition: all ease 200ms;
-    background-color: #7A9E72;
 }
 .custumButton:hover{
     background-color: #70707079;
