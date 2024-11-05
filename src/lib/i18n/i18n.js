@@ -6,14 +6,16 @@ const resources = {
         translation:{
             naturalArmonia:'NATURAL ARMONIA',
             clasesDeYoga:'ural',
-            clasesDeCompose:'armo'
+            clasesDeCompose:'armo',
+            ingresaTuEmail:'INGRESA TU EMAIL'
         }
     },
     it:{
         translation:{
             naturalArmonia:'ARMONIA NATURALE',
             clasesDeYoga:'it',
-            clasesDeCompose:'armo_it'
+            clasesDeCompose:'armo_it',
+            ingresaTuEmail:'INSERISCI LA TUA EMAIL'
         }
     }
 }
