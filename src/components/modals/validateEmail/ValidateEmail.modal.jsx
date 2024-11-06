@@ -11,7 +11,7 @@ const ValidateEmail = ({handleModal})=>{
             </div>
             <div className='box_email_modal' >
                 <h2>{t('ingresaTuEmail')}</h2>
-                <h3>VAMOS A VALIDAR TU EMAIL</h3>
+                <h3>{t('vamosAValidarTuEmail')}</h3>
                 <CheckEmail/>
             </div>
         </>

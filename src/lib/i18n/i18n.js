@@ -7,7 +7,8 @@ const resources = {
             naturalArmonia:'NATURAL ARMONIA',
             clasesDeYoga:'ural',
             clasesDeCompose:'armo',
-            ingresaTuEmail:'INGRESA TU EMAIL'
+            ingresaTuEmail:'INGRESA TU EMAIL',
+            vamosAValidarTuEmail:'VAMOS A VALIDAR TU EMAIL'
         }
     },
     it:{
@@ -15,7 +16,8 @@ const resources = {
             naturalArmonia:'ARMONIA NATURALE',
             clasesDeYoga:'it',
             clasesDeCompose:'armo_it',
-            ingresaTuEmail:'INSERISCI LA TUA EMAIL'
+            ingresaTuEmail:'INSERISCI LA TUA EMAIL',
+            vamosAValidarTuEmail:'LASCIACI UNA VALIDA EMAIL'
         }
     }
 }
