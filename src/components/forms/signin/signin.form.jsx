@@ -7,11 +7,13 @@ import { saveUser } from '../../../redux/actions/actions'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
 import { useState } from 'react'
 import sendCode from '../../../adapters/sendCode'
+import { useTranslation } from 'react-i18next'
 
 const CreateUser = ()=>{
     const [modal, setmodal] = useState(false)
     const email = useSelector(state => state.user.email)
     const dispath = useDispatch()
+    const { t } = useTranslation()
 
     const formik = useFormik({
         initialValues:{
@@ -51,14 +53,14 @@ const CreateUser = ()=>{
             >
                 <div>
                     <div className="create_box_form" >
-                        <h2>REGISTRATE</h2>
-                        <h3>COMPLETA LOS DATOS PARA CREAR TU USUARIO</h3>
+                        <h2>{t('registrate')}</h2>
+                        <h3>{t('completaLosDatosParaCrearTuUsuario')}</h3>
                         <input
                             type="text"
                             id="name"
                             name="name"
                             value={formik.values.name}
-                            placeholder="nombre"
+                            placeholder={t('nombre')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -70,7 +72,7 @@ const CreateUser = ()=>{
                             id="surname"
                             name="surname"
                             value={formik.values.surname}
-                            placeholder="apellido"
+                            placeholder={t('apellido')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -82,7 +84,7 @@ const CreateUser = ()=>{
                             id="password"
                             name="password"
                             value={formik.values.password}
-                            placeholder="contraseña"
+                            placeholder={t('contraseña')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -96,7 +98,7 @@ const CreateUser = ()=>{
                             id="phone"
                             name="phone"
                             value={formik.values.phone}
-                            placeholder="telefono"
+                            placeholder={t('telefono')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -111,7 +113,7 @@ const CreateUser = ()=>{
                                     id="address"
                                     name="address"
                                     value={formik.values.address}
-                                    placeholder="calle"
+                                    placeholder={t('calle')}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                 />
@@ -126,7 +128,7 @@ const CreateUser = ()=>{
                                     id="number"
                                     name="number"
                                     value={formik.values.number}
-                                    placeholder="numero"
+                                    placeholder={t('numero')}
                                     onChange={formik.handleChange}
                                     onBlur={formik.handleBlur}
                                 />
@@ -140,7 +142,7 @@ const CreateUser = ()=>{
                             id="location"
                             name="location"
                             value={formik.values.location}
-                            placeholder="localidad"
+                            placeholder={t('localidad')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -152,7 +154,7 @@ const CreateUser = ()=>{
                             id="state"
                             name="state"
                             value={formik.values.state}
-                            placeholder="provincia"
+                            placeholder={t('provincia')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -164,7 +166,7 @@ const CreateUser = ()=>{
                             id="country"
                             name="country"
                             value={formik.values.country}
-                            placeholder="país"
+                            placeholder={t('pais')}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
                         />
@@ -178,7 +180,7 @@ const CreateUser = ()=>{
                         type='submit' 
                         flip={'vertical'}
                     >
-                        CREAR
+                        {t('crear')}
                     </ButtonCircle>
                 </div>
             </form>

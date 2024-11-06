@@ -11,7 +11,21 @@ const resources = {
             vamosAValidarTuEmail:'VAMOS A VALIDAR TU EMAIL',
             ingresar:'INGRESAR',
             queBuenoVerte:'QUE BUENO VERTE',
-            vamosAPedirteUnosDatos:'VAMOS A PEDIRTE UNOS DATOS'
+            vamosAPedirteUnosDatos:'VAMOS A PEDIRTE UNOS DATOS',
+            registrarse:'REGISTRARSE',
+            registrate:'REGISTRATE',
+            crear:'CREAR',
+            alCrearElUsuarioAceptasLosTerminosYCondicionesDeNaturalArmonia:'al crear el usuario aceptas los terminos y condiciones de Natural Armonia',
+            completaLosDatosParaCrearTuUsuario:'COMPLETA LOS DATOS PARA CREAR TU USUARIO',
+            nombre:'nombre',
+            apellido:'apellido',
+            constraseña:'contraseña',
+            telefono:'teléfono',
+            calle:'calle',
+            numero:'numero',
+            localidad:'localidad',
+            provincia:'provincia',
+            pais:'país'
         }
     },
     it:{
@@ -23,7 +37,21 @@ const resources = {
             vamosAValidarTuEmail:'LASCIACI UNA VALIDA EMAIL',
             ingresar:'INGRESSO',
             queBuenoVerte:'CHE BENE VERDE',
-            vamosAPedirteUnosDatos:'ANDIAMO A PRENDERE UNO DEI NOSTRI DATI'
+            vamosAPedirteUnosDatos:'ANDIAMO A PRENDERE UNO DEI NOSTRI DATI',
+            registrarse:'REGISTRARSI',
+            registrate:'REGISTRATI',
+            crear:'CREARE',
+            alCrearElUsuarioAceptasLosTerminosYCondicionesDeNaturalArmonia:'creando l´utente accetti i termini e le condizioni di Natural Armonia',
+            completaLosDatosParaCrearTuUsuario:'COMPLETA I DATI PER CREARE IL TUO UTENTE',
+            nombre:'nome',
+            apellido:'cognome',
+            constraseña:'password',
+            telefono:'telefono',
+            calle:'strada',
+            numero:'numero',
+            localidad:'località',
+            provincia:'provincia',
+            pais:'paese'
         }
     }
 }
