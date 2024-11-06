@@ -8,7 +8,10 @@ const resources = {
             clasesDeYoga:'ural',
             clasesDeCompose:'armo',
             ingresaTuEmail:'INGRESA TU EMAIL',
-            vamosAValidarTuEmail:'VAMOS A VALIDAR TU EMAIL'
+            vamosAValidarTuEmail:'VAMOS A VALIDAR TU EMAIL',
+            ingresar:'INGRESAR',
+            queBuenoVerte:'QUE BUENO VERTE',
+            vamosAPedirteUnosDatos:'VAMOS A PEDIRTE UNOS DATOS'
         }
     },
     it:{
@@ -17,7 +20,10 @@ const resources = {
             clasesDeYoga:'it',
             clasesDeCompose:'armo_it',
             ingresaTuEmail:'INSERISCI LA TUA EMAIL',
-            vamosAValidarTuEmail:'LASCIACI UNA VALIDA EMAIL'
+            vamosAValidarTuEmail:'LASCIACI UNA VALIDA EMAIL',
+            ingresar:'INGRESSO',
+            queBuenoVerte:'CHE BENE VERDE',
+            vamosAPedirteUnosDatos:'ANDIAMO A PRENDERE UNO DEI NOSTRI DATI'
         }
     }
 }
