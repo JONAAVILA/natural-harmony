@@ -1,6 +1,11 @@
 import axios from "axios";
 
-const URL = 'https://tienda-online-backend-riqf.onrender.com/login'
+const {
+    PRODUCTION,
+    URL_LOGIN_DEV,
+    URL_LOGIN_PRODUCTION
+} = process.env
+const URL = PRODUCTION ? URL_LOGIN_PRODUCTION : URL_LOGIN_DEV
 
 export default async function postLogin(values){
     const user = {

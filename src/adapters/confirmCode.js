@@ -1,6 +1,11 @@
 import axios from "axios"
 
-const URL = 'https://tienda-online-backend-riqf.onrender.com/singin/check/code'
+const {
+    PRODUCTION,
+    URL_CHECK_CODE_DEV,
+    URL_CHECK_CODE_PRODUCTION
+} = process.env
+const URL = PRODUCTION ? URL_CHECK_CODE_PRODUCTION : URL_CHECK_CODE_DEV
 
 export async function confirmCode(code){
     const res = await axios.post(URL,{code:code},{

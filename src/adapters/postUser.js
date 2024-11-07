@@ -1,7 +1,11 @@
 import axios from "axios";
 
-const URL = 'https://tienda-online-backend-riqf.onrender.com/singin'
-// const URL = 'http://localhost:3000/singin'
+const {
+    PRODUCTION,
+    URL_POST_USER_DEV,
+    URL_POST_USER_PRODUCTION
+} = process.env
+const URL = PRODUCTION ? URL_POST_USER_PRODUCTION : URL_POST_USER_DEV
 
 export default async function postUser (values){
     try {
