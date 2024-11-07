@@ -1,11 +1,11 @@
 import axios from "axios";
 
 const {
-    PRODUCTION,
-    URL_LOGIN_DEV,
-    URL_LOGIN_PRODUCTION
-} = process.env
-const URL = PRODUCTION ? URL_LOGIN_PRODUCTION : URL_LOGIN_DEV
+    VITE_PRODUCTION,
+    VITE_URL_LOGIN_DEV,
+    VITE_URL_LOGIN_PRODUCTION
+} = import.meta.env
+const URL = VITE_PRODUCTION ? VITE_URL_LOGIN_PRODUCTION : VITE_URL_LOGIN_DEV
 
 export default async function postLogin(values){
     const user = {
