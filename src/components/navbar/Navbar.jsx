@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
-import Menu from '../icons/menu/Menu.icon'
 import './navbar.css'
 import ButtonLenguage from '../button/buttonLenguage/ButtonLenguage'
+import ButtonMenu from '../button/buttonMenu/ButtonMenu'
 
 const Navbar = ({handleLenguage})=>{
     return(
         <aside className='navbar_container' >
-            <Menu/>
+            <ButtonMenu/>
             <Link to={'/profile'} >
                 <div className='navbar_home' />
             </Link>

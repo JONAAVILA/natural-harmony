@@ -1,0 +1,21 @@
+.button_menu_icon{
+    stroke-width: 2px;
+    transition: all ease 200ms;
+}
+.button_menu_icon:hover{
+    .path1{
+        position: absolute;
+        transform-origin: 10px 1px; 
+        transform: rotate(90deg);
+        stroke-dasharray: 1000; /* Define el tamaño total del trazo */
+        stroke-dashoffset: 100; /* Oculta el trazo */
+        transition: all ease 200ms; 
+        
+    }
+    .path2{
+        opacity: 0;
+    }
+    .path3{
+        opacity: 0;
+    }
+}
