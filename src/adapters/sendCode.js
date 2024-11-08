@@ -1,10 +1,9 @@
 import axios from "axios"
 
-const {
-    VITE_PRODUCTION,
-    VITE_URL_SEND_CODE_DEV,
-    VITE_URL_SEND_CODE_PRODUCTION
-} = import.meta.env
+const VITE_PRODUCTION = import.meta.env.VITE_PRODUCTION
+const VITE_URL_SEND_CODE_DEV = import.meta.env.VITE_URL_SEND_CODE_DEV
+const VITE_URL_SEND_CODE_PRODUCTION = import.meta.env.VITE_URL_SEND_CODE_PRODUCTION
+
 const URL = VITE_PRODUCTION === 'true' ? VITE_URL_SEND_CODE_PRODUCTION : VITE_URL_SEND_CODE_DEV
 
 export default async function sendCode (){
