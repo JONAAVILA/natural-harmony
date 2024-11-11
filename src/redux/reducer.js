@@ -1,6 +1,7 @@
-import { SAVE_EMAIL, SAVE_USER } from "./actions/actionsTypes";
+import { SAVE_EMAIL, SAVE_USER, UPDATE_USER } from "./actions/actionsTypes";
 
 const initialState = {
+    isLogin:false,
     user:{
         name:'',
         surname:'',
@@ -29,6 +30,17 @@ const rootReducer = (state = initialState, action)=>{
             return{
                 ...state,
                 user:action.payload
+            }
+        case UPDATE_USER:
+            return{
+                ...state,
+                user:{
+                    ...state.user,
+                    name:action.payload.name,
+                    surname:action.payload.surname,
+                    location:action.payload.location,
+                    country:action.payload.country
+                }
             }
         default:
             return state

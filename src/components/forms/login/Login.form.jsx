@@ -8,6 +8,7 @@ import Alert from '../../modals/alerts/Alert.modal.jsx'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
 import sendCode from '../../../adapters/sendCode.js';
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle.jsx';
+import useUpdateUser from '../../../hooks/useUpdateUser.jsx';
 
 const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
@@ -24,6 +25,7 @@ const LoginForm = ({handleLoader})=>{
             handleLoader()
             const res = await postLogin(values)
             if(res === true){
+                useUpdateUser(res)
                 navigate('/home')
                 return
             }
