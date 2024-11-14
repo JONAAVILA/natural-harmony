@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 
 const Profile = ()=>{
     const navigate = useNavigate()
-    const user = useUser('validate')
+    const user = useUser()
 
     useEffect(()=>{
         if(!user) navigate('/login')
@@ -14,7 +14,7 @@ const Profile = ()=>{
     return(
         <section>
             <h1>{user.name}</h1>
-            <h2>{user.lastname}</h2>
+            <h2>{user.surname}</h2>
         </section>
     )
 }
