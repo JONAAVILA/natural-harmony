@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux"
 import { updateUser } from "../redux/actions/actions"
 
-const useUpdateUser = (values)=>{
+const useUpdateUser = ()=>{
     const dispatch = useDispatch()
-    dispatch(updateUser(values))
+    return (values)=>dispatch(updateUser(values))
 }
 
 export default useUpdateUser

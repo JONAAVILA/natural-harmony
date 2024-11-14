@@ -14,6 +14,7 @@ const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
     const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
+    const updateUser = useUpdateUser()
 
     const formik = useFormik({
         initialValues:{
@@ -24,8 +25,8 @@ const LoginForm = ({handleLoader})=>{
         onSubmit: async (values)=>{
             handleLoader()
             const res = await postLogin(values)
-            if(res === true){
-                useUpdateUser(res)
+            if(res){
+                updateUser(res)
                 navigate('/home')
                 return
             }
