@@ -25,13 +25,14 @@ const LoginForm = ({handleLoader})=>{
         onSubmit: async (values)=>{
             handleLoader()
             const res = await postLogin(values)
-            if(res){
+            if(res.name){
                 updateUser(res)
                 navigate('/home')
                 return
             }
             if(res === 'validate user'){
                 await sendCode()
+                updateUser(res)
                 setmodal(!modal)
                 return
             }
