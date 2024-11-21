@@ -8,6 +8,7 @@ import Error404 from './view/404/Error404'
 import Profile from './view/profile/Profile'
 import { useTranslation } from 'react-i18next'
 import './App.css'
+import Footer from './components/footer/Footer'
 
 function App() {
   const { i18n } = useTranslation()
@@ -27,6 +28,7 @@ function App() {
         <Route path='/home' element={<Home/>} />
         <Route path='/profile' element={<Profile/>} />
       </Routes>
+      <Footer/>
     </BrowserRouter>
   )
 }
