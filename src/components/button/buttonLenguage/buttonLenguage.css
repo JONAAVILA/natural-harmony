@@ -13,11 +13,10 @@
     padding: 0;
 }
 .box_lenguages{
-    height: 15px;
-    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     overflow: hidden;
+    height: 15px;
     margin-inline: 2px;
+    
 }

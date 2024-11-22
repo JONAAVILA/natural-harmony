@@ -5,7 +5,7 @@ const Footer = ()=>{
 
     return(
         <footer>
-            {`Natural Armónia ${currentYear} ©️ todos los derechos reservados - powered by Jonatan Avila Diseño y Desarrollador Web`}
+            {`Natural Armónia ${currentYear} ©️ todos los derechos reservados - powered by Jonatan Avila Diseño y Desarrollado Web`}
         </footer>     
     )
 }

@@ -28,8 +28,8 @@ const ButtonLenguage = ({handleLenguage})=>{
                 <LenguageIcon/>
             </button>
             <div className='box_lenguages' >
-                <p id='it' >italiano</p>
                 <p id='es' >español</p>
+                <p id='it' >italiano</p>
             </div>
         </div>
     )
