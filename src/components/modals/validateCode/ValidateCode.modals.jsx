@@ -9,7 +9,7 @@ import postUser from "../../../adapters/postUser"
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle';
 import LoadIcon from "../../icons/loader/LoadIcon"
 import './validateCode.modals.css'
-import { updateUser } from "../../../redux/actions/actions"
+import setStorage from "../../../utils/setStorage"
 
 const ValidateCode = ({validate,email,password,handleModal})=>{
     const user = useSelector(state => state.user)

@@ -9,6 +9,7 @@ import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
 import sendCode from '../../../adapters/sendCode.js';
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle.jsx';
 import useUpdateUser from '../../../hooks/useUpdateUser.jsx';
+import setStorage from '../../../utils/setStorage.js';
 
 const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
@@ -26,13 +27,13 @@ const LoginForm = ({handleLoader})=>{
             handleLoader()
             const res = await postLogin(values)
             if(res.name){
+                setStorage(res)
                 updateUser(res)
                 navigate('/home')
                 return
             }
             if(res === 'validate user'){
                 await sendCode()
-                updateUser(res)
                 setmodal(!modal)
                 return
             }

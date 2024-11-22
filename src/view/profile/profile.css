@@ -9,11 +9,3 @@
     flex-direction: column;
     align-items: flex-end;
 }
-.box_info_profile::before{
-    content: '';
-    height: 100px;
-    width: 100px;
-    background-image: url('../../assets/yoga.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-}

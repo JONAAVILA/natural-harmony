@@ -9,9 +9,16 @@ import Profile from './view/profile/Profile'
 import { useTranslation } from 'react-i18next'
 import './App.css'
 import Footer from './components/footer/Footer'
+import { useEffect } from 'react'
+import useGetStorage from './hooks/useGetStorage'
 
 function App() {
+  const getStorage = useGetStorage()
   const { i18n } = useTranslation()
+  
+  useEffect(()=>{
+    getStorage()
+  },[])
 
   const handleLenguage = (lng) =>{
     i18n.changeLanguage(lng)

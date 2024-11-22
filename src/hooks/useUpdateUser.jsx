@@ -3,7 +3,10 @@ import { updateUser } from "../redux/actions/actions"
 
 const useUpdateUser = ()=>{
     const dispatch = useDispatch()
-    return (values)=>dispatch(updateUser(values))
+    return (values)=>{
+        localStorage.setItem('user',JSON.stringify(values))
+        dispatch(updateUser(values))
+    }
 }
 
 export default useUpdateUser

@@ -38,6 +38,7 @@ const rootReducer = (state = initialState, action)=>{
                     ...state.user,
                     name:action.payload.name,
                     surname:action.payload.surname,
+                    email:action.payload.email,
                     location:action.payload.location,
                     country:action.payload.country
                 }
