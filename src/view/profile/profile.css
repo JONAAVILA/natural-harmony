@@ -1,0 +1,19 @@
+.container_heading_profile{
+    display: flex;
+    h2{
+        padding-top: 12px;
+    }
+}
+.heading_profile{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.box_info_profile::before{
+    content: '';
+    height: 100px;
+    width: 100px;
+    background-image: url('../../assets/yoga.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
