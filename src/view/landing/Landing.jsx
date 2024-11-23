@@ -3,9 +3,11 @@ import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
 import './landing.css';
 import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
 import { useTranslation } from 'react-i18next';
+import useIsLogin from '../../hooks/useIsLogin';
 
 const Landing = ()=>{
     const [modal, setmodal] = useState(false)
+    const path = useIsLogin()
     const { t } = useTranslation()
 
     const handleModal = ()=>{
@@ -24,7 +26,7 @@ const Landing = ()=>{
                             <ButtonCircle
                                 sideArrow={'left'} 
                                 flip={'horizontal'} 
-                                path={'/login'}
+                                path={path}
                             >
                                 YOGA
                             </ButtonCircle>
