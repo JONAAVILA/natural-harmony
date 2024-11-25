@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
-import './landing.css';
-import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import useIsLogin from '../../hooks/useIsLogin';
+import useIsRegistrer from '../../hooks/useIsRegistrer';
+import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
+import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
+import './landing.css';
 
 const Landing = ()=>{
     const [modal, setmodal] = useState(false)
-    const path = useIsLogin()
+    const pathLogin = useIsLogin()
+    const pathSignin = useIsRegistrer()
     const { t } = useTranslation()
 
     const handleModal = ()=>{
@@ -26,7 +28,7 @@ const Landing = ()=>{
                             <ButtonCircle
                                 sideArrow={'left'} 
                                 flip={'horizontal'} 
-                                path={path}
+                                path={pathLogin}
                             >
                                 YOGA
                             </ButtonCircle>
@@ -49,6 +51,7 @@ const Landing = ()=>{
                         </span>
                         <span className='landing_button_rigth' >
                             <ButtonCircle
+                                path={pathSignin}
                                 handleModal={handleModal}
                             >
                                 COMPOST
