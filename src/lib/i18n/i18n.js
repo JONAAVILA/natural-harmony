@@ -25,7 +25,8 @@ const resources = {
             numero:'numero',
             localidad:'localidad',
             provincia:'provincia',
-            pais:'país'
+            pais:'país',
+            contacto:'CONTACTO'
         }
     },
     it:{
@@ -51,7 +52,8 @@ const resources = {
             numero:'numero',
             localidad:'località',
             provincia:'provincia',
-            pais:'paese'
+            pais:'paese',
+            contacto:'CONTATTO'
         }
     }
 }
