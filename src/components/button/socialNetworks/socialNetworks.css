@@ -1,0 +1,12 @@
+.container_networks{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 1000px;
+}
+.box_button_networks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}

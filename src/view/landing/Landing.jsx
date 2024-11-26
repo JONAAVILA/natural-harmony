@@ -5,6 +5,7 @@ import useIsRegistrer from '../../hooks/useIsRegistrer';
 import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
 import ValidateEmail from '../../components/modals/validateEmail/ValidateEmail.modal';
 import './landing.css';
+import SocialNetworks from '../../components/button/socialNetworks/SocialNetworks';
 
 const Landing = ()=>{
     const [modal, setmodal] = useState(false)
@@ -60,6 +61,9 @@ const Landing = ()=>{
                     </div>  
                 </div>
             </h1>
+            <div className='box_social_network' >
+                <SocialNetworks/>
+            </div>
         </section>
     )
 }
