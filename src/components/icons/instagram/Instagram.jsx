@@ -1,5 +1,3 @@
-import './instagram.css'
-
 const Instagram = ()=>{
     return(
         <svg

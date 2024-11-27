@@ -7,18 +7,18 @@ const SocialNetworks = ()=>{
         <div className='container_networks' >
             <div className='box_button_networks' >
                 <a
-                    href=""
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Whatsapp/>
-                </a>
-                <a
                     href="https://www.instagram.com/naturalarmonia.lf.it"
                     target="_blank"
                     rel="noreferrer"
                 >
                     <Instagram/>
+                </a>
+                <a
+                    href=""
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Whatsapp/>
                 </a>
             </div>
         </div>
