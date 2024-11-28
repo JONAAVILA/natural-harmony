@@ -12,7 +12,7 @@ const Profile = ()=>{
     const surname = user.surname.toUpperCase()
     
     useEffect(()=>{
-        if(!user) navigate('/login')
+        if(!user.name) navigate('/login')
     },[])
 
     return(
