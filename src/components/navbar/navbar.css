@@ -21,6 +21,7 @@
 }
 .logout_profile{
     z-index: -1;
+    cursor: pointer;
     position: absolute;
     opacity: 0;
     transition: all ease 400ms;

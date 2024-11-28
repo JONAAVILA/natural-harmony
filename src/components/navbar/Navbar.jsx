@@ -17,7 +17,7 @@ const Navbar = ({handleLenguage})=>{
                         <Link to={'/profile'} >
                             <img src={imageHome} alt="profile image" />
                         </Link>
-                        <p className='logout_profile' >LOGOUT</p>
+                        <button className='logout_profile' >LOGOUT</button>
                     </div>
                 <a href="/about">ABOUT</a>
             </div>

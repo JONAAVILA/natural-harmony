@@ -5,7 +5,7 @@ const useIsRegistrer = ()=>{
 
     useEffect(()=>{
         const user = localStorage.getItem('user')
-        if(!user) setpath('/singin')
+        if(!user) setpath('/signin')
     })    
 
     return path
