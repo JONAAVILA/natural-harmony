@@ -11,14 +11,14 @@ const useIsLogin = () => {
                 if (parsedUser && parsedUser.values === null && parsedUser.isValidateLogin) {
                     navigate('/login')
                 } else if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
-                    navigate('/signin')
+                    navigate('/validate')
                 }
             } catch (error) {
                 console.error("Error al parsear el usuario:", error)
-                navigate('/signin')
+                navigate('/validate')
             }
         } else {
-            navigate('/signin')
+            navigate('/validate')
         }
     }
 }
