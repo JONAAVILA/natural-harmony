@@ -1,14 +1,26 @@
-import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 
-const useIsLogin = ()=>{
-    const [path, setpath] = useState('/home')
+const useIsLogin = () => {
+    const navigate = useNavigate()
 
-    useEffect(()=>{
-        const user = localStorage.getItem('user')
-        if(!user) setpath('/login')
-    },[])
-    
-    return path
+    return ()=>{
+        const user = localStorage.getItem('user');
+        if (user) {
+            try {
+                const parsedUser = JSON.parse(user);
+                if (parsedUser && parsedUser.values === null && parsedUser.isValidateLogin) {
+                    navigate('/login')
+                } else if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
+                    navigate('/signin')
+                }
+            } catch (error) {
+                console.error("Error al parsear el usuario:", error)
+                navigate('/signin')
+            }
+        } else {
+            navigate('/signin')
+        }
+    }
 }
 
-export default useIsLogin
+export default useIsLogin;

@@ -12,6 +12,7 @@ import Footer from './components/footer/Footer'
 import useGetStorage from './hooks/useGetStorage'
 import Contact from './view/contact/Contact'
 import About from './view/about/About'
+import Store from './view/store/Store'
 import './App.css'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         <Route path='/profile' element={<Profile/>} />
         <Route path='/contact' element={<Contact/>} />
         <Route path='/about' element={<About/>} />
+        <Route path='/store' element={<Store/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

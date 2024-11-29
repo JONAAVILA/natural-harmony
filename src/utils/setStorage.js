@@ -1,6 +1,11 @@
 
 const setStorage = (values)=>{
-    const user = JSON.stringify(values)
+    const user = JSON.stringify(
+        {
+            values:values,
+            isValidateLogin:true
+        }
+    )
     localStorage.setItem('user',user)
 }
 
