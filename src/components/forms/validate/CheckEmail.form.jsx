@@ -9,7 +9,7 @@ import LoadIcon from "../../icons/loader/LoadIcon"
 import './checkEmail.form.css'
 import ButtonCircle from "../../button/buttonCircle/ButtonCircle"
 
-const CheckEmail = ({handleModal})=>{
+const CheckEmail = ()=>{
     const [loader, setloader] = useState(false)
     const navigate = useNavigate()
     const dispath = useDispatch()
@@ -22,11 +22,10 @@ const CheckEmail = ({handleModal})=>{
         onSubmit: async (values)=>{
             setloader(!loader)
             const check = await confirmEmail(values)
-            
             if(check){
                 dispath(saveEmail(values.email))
                 setloader(!loader)
-                handleModal()
+                navigate('/signin')
                 return
             }
             setloader(!loader)

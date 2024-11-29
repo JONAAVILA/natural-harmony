@@ -13,6 +13,7 @@ import useGetStorage from './hooks/useGetStorage'
 import Contact from './view/contact/Contact'
 import About from './view/about/About'
 import Store from './view/store/Store'
+import Validate from './view/validate/Validate'
 import './App.css'
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/store' element={<Store/>} />
+        <Route path='/validate' element={<Validate/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
