@@ -10,5 +10,6 @@ export default async function confirmEmail(email){
     const res = await axios.post(URL,email,{
         withCredentials: true
     })
+    console.log('email',res.data)
     return res.data
 }
