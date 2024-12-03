@@ -2,12 +2,12 @@ import { useFormik } from "formik"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import confirmEmail from "../../../adapters/confirmEmail"
 import { saveEmail } from '../../../lib/redux/actions/actions'
 import { validateEmail } from "../../../utils/validate"
+import confirmEmail from "../../../adapters/confirmEmail"
 import LoadIcon from "../../icons/loader/LoadIcon"
-import './checkEmail.form.css'
 import ButtonCircle from "../../button/buttonCircle/ButtonCircle"
+import './checkEmail.form.css'
 
 const CheckEmail = ()=>{
     const [loader, setloader] = useState(false)

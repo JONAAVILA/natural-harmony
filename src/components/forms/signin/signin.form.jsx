@@ -1,14 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useFormik } from 'formik'
-import './signin.form.css'
-import { validateUser } from '../../../utils/validate'
-import ButtonCircle from '../../button/buttonCircle/ButtonCircle'
-import { saveUser } from '../../../lib/redux/actions/actions'
-import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
-import { useState } from 'react'
-import sendCode from '../../../adapters/sendCode'
 import { useTranslation } from 'react-i18next'
+import { useFormik } from 'formik'
+import { useState } from 'react'
+import { validateUser } from '../../../utils/validate'
+import { saveUser } from '../../../lib/redux/actions/actions'
+import ButtonCircle from '../../button/buttonCircle/ButtonCircle'
+import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
+import sendCode from '../../../adapters/sendCode'
 import setStorage from '../../../utils/setStorage'
+import './signin.form.css'
 
 const CreateUser = ()=>{
     const [modal, setmodal] = useState(false)

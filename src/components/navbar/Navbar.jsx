@@ -4,8 +4,10 @@ import ButtonLenguage from '../button/buttonLenguage/ButtonLenguage'
 import ButtonMenu from '../button/buttonMenu/ButtonMenu'
 import { useTranslation } from 'react-i18next'
 import imageHome from '../../assets/home.png'
+import useLogout from '../../hooks/useLogout'
 
 const Navbar = ({handleLenguage})=>{
+    const logout = useLogout()
     const { t } = useTranslation()
 
     return(
@@ -17,7 +19,7 @@ const Navbar = ({handleLenguage})=>{
                         <Link to={'/profile'} >
                             <img src={imageHome} alt="profile image" />
                         </Link>
-                        <button className='logout_profile' >LOGOUT</button>
+                        <button onClick={logout} className='logout_profile' >LOGOUT</button>
                     </div>
                 <a href="/about">ABOUT</a>
             </div>
