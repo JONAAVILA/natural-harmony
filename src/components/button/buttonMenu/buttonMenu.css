@@ -1,4 +1,5 @@
 .box_menu{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -6,13 +7,27 @@
     width: 18px;
     height: 26px;
 }
+.box_links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    top: 30px;
+    left: 20px;
+    overflow: hidden;
+    a{
+        font-weight:400;
+        font-size: 10px;
+    }
+}
 .dot{
     width: 18px;
     height: 1px;
     background-color: #313131;
 }
 .top{
-    animation: rotate_out 200ms linear forwards;
+    animation: rotate_out 500ms linear forwards;
 }
 .midfalse{
     animation: rotate_mid_out 200ms linear forwards;
@@ -43,12 +58,16 @@
     }
 }
 @keyframes rotate_out {
-    from{
-        transform: rotate(90deg);
+    0%{
+        transform: rotate(90deg) translateX(55px);
+        width: 80px;
     }
-    to{
-        transform: rotate(0deg);
-        width: 18;
+    50%{
+        transform: rotate(90deg) translateX(0);
+        width: 18px;
+    }
+    100%{
+        transform: rotate(0) translateX(0);
     }
 }
 @keyframes rotate_mid_in {
