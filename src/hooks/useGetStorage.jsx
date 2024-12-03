@@ -6,9 +6,9 @@ const useGetStorage = ()=>{
     
     return ()=>{
         const user = localStorage.getItem('user')
-        if(!user) return 'no hay datos'
+        if(!user) return console.log('no hay datos')
         const userParse = JSON.parse(user)
-
+    
         dispatch(updateUser(userParse))
     }
 }

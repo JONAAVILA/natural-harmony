@@ -6,10 +6,11 @@ import { useEffect } from 'react'
 const Profile = ()=>{
     const navigate = useNavigate()
     const user = useUser()
+    console.log('profile user', user)
     
-    const startName = user.name.slice(0,user.name.length / 2).toUpperCase()
-    const endName = user.name.slice(user.name.length / 2).toUpperCase()
-    const surname = user.surname.toUpperCase()
+    const startName = user.name?.slice(0,user.name.length / 2).toUpperCase()
+    const endName = user.name?.slice(user.name.length / 2).toUpperCase()
+    const surname = user.surname?.toUpperCase()
     
     useEffect(()=>{
         if(!user.name) navigate('/login')

@@ -8,6 +8,7 @@ import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
 import { useState } from 'react'
 import sendCode from '../../../adapters/sendCode'
 import { useTranslation } from 'react-i18next'
+import setStorage from '../../../utils/setStorage'
 
 const CreateUser = ()=>{
     const [modal, setmodal] = useState(false)
@@ -31,6 +32,7 @@ const CreateUser = ()=>{
         validationSchema:validateUser,
         onSubmit: async (values)=>{
             dispath(saveUser(values))
+            setStorage(values)
             const resCode = await sendCode()
             if(resCode){
                 setmodal(!modal)
