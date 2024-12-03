@@ -11,8 +11,9 @@ import LoadIcon from "../../icons/loader/LoadIcon"
 import './validateCode.modals.css'
 
 const ValidateCode = ({validate,email,password,handleModal})=>{
-    const user = useSelector(state => state.user)
+    const [error, setError] = useState('')
     const [loader, setloader] = useState(false)
+    const user = useSelector(state => state.user)
     const navigate = useNavigate()
 
     const formik = useFormik({
@@ -24,7 +25,7 @@ const ValidateCode = ({validate,email,password,handleModal})=>{
             setloader(!loader)
             const code = values.code
             const resConfirm = await confirmCode(code)
-
+        
             if(!validate && resConfirm === true){
                 const resCreate = await postUser(user)
                 if(resCreate === 'user created') navigate('/home')
@@ -39,6 +40,7 @@ const ValidateCode = ({validate,email,password,handleModal})=>{
                 }
                 navigate('/login')
             }
+            setError('código inválido')
         }
     })
 
@@ -76,6 +78,7 @@ const ValidateCode = ({validate,email,password,handleModal})=>{
                 </form>
                 <div className="code_error" >
                     {formik.touched.code && formik.errors.code && <p>{formik.errors.code}</p>}
+                    {error && <p>{error}</p>}
                 </div>
             </div>
         </>

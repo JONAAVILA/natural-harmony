@@ -45,10 +45,10 @@ const LoginForm = ({handleLoader})=>{
     })
     return(
         <div>
-            <div className='login_box_modal' >
+  
                 {alert && <Alert>{alert}</Alert>}
                 {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
-            </div>
+
             <form
                 onSubmit={formik.handleSubmit}
                 className='login_form'

@@ -23,7 +23,7 @@
     height: 200px;
     border-radius: 2rem;
     background-color: #25252550;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     form{
         display: flex;
         justify-content: center;
@@ -37,6 +37,7 @@
         font-size: 12px;
         text-align: center;
         text-wrap: balance;
+        margin-bottom: -10px;
     }
 }
 .code_box_input{
@@ -49,13 +50,14 @@
     top: 5px;
 }
 .code_error{
-    height: 10px;
-    width: 380px;
     display: flex;
+    height: 10px;
+    width: 390px;
+    margin-top: -30px;
+    gap: 8px;
     justify-content: left;
     p{
         font-size: .6rem;
-        color: #ff6262;
-        padding-left: 12px;
+        color: #c02d2d;
     }
 }
