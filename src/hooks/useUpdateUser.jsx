@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { updateUser } from "../redux/actions/actions"
+import { updateUser } from "../lib/redux/actions/actions"
 
 const useUpdateUser = ()=>{
     const dispatch = useDispatch()
