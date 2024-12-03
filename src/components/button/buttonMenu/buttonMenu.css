@@ -3,59 +3,83 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    width: 20px;
+    width: 18px;
     height: 26px;
-    transition: transform 200ms linear;
 }
 .dot{
-    width: 20px;
-    height: 2px;
-    color: black;
-    background-color: black;
+    width: 18px;
+    height: 1px;
+    background-color: #313131;
 }
-.top {
-    transform: rotate(0deg);
+.top{
+    animation: rotate_out 200ms linear forwards;
 }
-.end {
-    transition: all ease 200ms;
+.midfalse{
+    animation: rotate_mid_out 200ms linear forwards;
 }
-.mid {
-    transition: all ease 200ms;
+.midtrue{
+    animation: rotate_mid_in 200ms linear forwards;
 }
-.box_menu:hover .end{
-    transition: all ease 200ms;
-    opacity: 0;
-    transform: translateY(30px);
+.endtrue{
+    animation: rotate_end_in 200ms linear forwards;
 }
-.box_menu:hover .mid{
-    transition: all ease 200ms;
-    opacity: 0;
-    transform: translateY(-30px);
+.endfalse{
+    animation: rotate_end_out 200ms linear forwards;
 }
-.box_menu:hover .top {
-    animation: rotate-in 200ms linear forwards;
+.true{
+    animation: rotate_in 500ms linear forwards;
 }
 
-.box_menu:not(:hover) .top {
-    animation: rotate-out 200ms linear forwards;
+@keyframes rotate_in {
+    0%{
+        transform: rotate(0) translateX(0);
+    }
+    50%{
+        transform: rotate(90deg) translateX(0);
+    }
+    100%{
+        transform: rotate(90deg) translateX(55px) ;
+        width: 80px;
+    }
 }
-
-@keyframes rotate-in {
-    from {
-        transform: rotate(0deg) translateX(0);
+@keyframes rotate_out {
+    from{
+        transform: rotate(90deg);
     }
-    to {
-        transform: rotate(90deg) translateX(40px);
-        width: 90px;
+    to{
+        transform: rotate(0deg);
+        width: 18;
     }
 }
-
-@keyframes rotate-out {
-    from {
-        transform: rotate(90deg) translateX(40px) ;
+@keyframes rotate_mid_in {
+    from{
+        transform: rotate(0deg);
     }
-    to {
-        transform: rotate(0deg) translateX(0);
-        width: 20px;
+    to{
+        transform: rotate(45deg);
+    }
+}
+@keyframes rotate_mid_out {
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes rotate_end_in {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg) translateX(4px) translateY(-5px);
+    }
+}
+@keyframes rotate_end_out{
+    from{
+        transform: rotate(-45deg);
+    }
+    to{
+        transform: rotate(0deg);
     }
 }
