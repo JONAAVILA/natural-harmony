@@ -5,7 +5,7 @@ const useLogout = ()=>{
     const user = localStorage.getItem('user')
     
     return ()=>{
-        if(user.name){
+        if(user){
             localStorage.clear()
             navigate('/')
             return

@@ -27,6 +27,7 @@ const LoginForm = ({handleLoader})=>{
             handleLoader()
             const res = await postLogin(values)
             if(res.name){
+                console.log('res',res)
                 setStorage(res)
                 updateUser(res)
                 navigate('/home')

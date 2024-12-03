@@ -5,7 +5,7 @@ const useUpdateUser = ()=>{
     const dispatch = useDispatch()
     return (values)=>{
         localStorage.setItem('user',JSON.stringify(values))
-        dispatch(updateUser(values))
+        dispatch(updateUser({values:values}))
     }
 }
 
