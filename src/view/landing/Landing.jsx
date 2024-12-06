@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import ButtonCircle from '../../components/button/buttonCircle/ButtonCircle';
-import SocialNetworks from '../../components/button/socialNetworks/SocialNetworks';
+import { ButtonCircle, SocialNetworks } from '../../components';
 import './landing.css';
 
 const Landing = ()=>{

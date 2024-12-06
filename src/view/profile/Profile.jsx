@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import useUser from '../../hooks/useUser'
 import './profile.css'
-import { useEffect } from 'react'
 
 const Profile = ()=>{
     const navigate = useNavigate()
     const user = useUser()
-    console.log('profile user', user)
     
     const startName = user.name?.slice(0,user.name.length / 2).toUpperCase()
     const endName = user.name?.slice(user.name.length / 2).toUpperCase()

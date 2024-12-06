@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import CheckEmail from '../../components/forms/validate/CheckEmail.form'
+import { CheckEmail } from '../../components'
 import './validate.css'
 
 const Validate = ()=>{

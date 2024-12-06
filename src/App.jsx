@@ -2,9 +2,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import useGetStorage from './hooks/useGetStorage'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
+import { Navbar, Footer } from './components'
 import './App.css'
-import Navbar from './components/navbar/Navbar'
-import Footer from './components/footer/Footer'
 import {
         Error404,
         About,

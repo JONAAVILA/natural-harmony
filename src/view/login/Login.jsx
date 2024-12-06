@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import LoginForm from '../../components/forms/login/Login.form';
-import LoadIcon from '../../components/icons/loader/LoadIcon';
-import './login.css';
+import { LoginForm, LoadIcon } from '../../components';
 import { useTranslation } from 'react-i18next';
+import './login.css';
 
 const Login = ()=>{
     const [loader, setloader] = useState(false)

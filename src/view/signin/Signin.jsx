@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import CreateUser from '../../components/forms/signin/signin.form';
+import { CreateUser } from '../../components';
 import './signin.css';
 
 const Signin = ()=>{
