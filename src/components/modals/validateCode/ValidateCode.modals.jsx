@@ -2,10 +2,8 @@ import { useSelector } from "react-redux"
 import { validateCode } from "../../../utils/validate"
 import { useFormik } from "formik"
 import { useState } from "react"
-import { confirmCode } from "../../../adapters/confirmCode"
+import { confirmCode, postUser, refresh } from "../../../adapters/users"
 import { useNavigate } from "react-router-dom"
-import refresh from "../../../adapters/refresh"
-import postUser from "../../../adapters/postUser"
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle';
 import LoadIcon from "../../icons/loader/LoadIcon"
 import './validateCode.modals.css'

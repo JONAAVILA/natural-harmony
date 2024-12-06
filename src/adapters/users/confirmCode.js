@@ -6,7 +6,7 @@ const VITE_URL_CHECK_CODE_PRODUCTION = import.meta.env.VITE_URL_CHECK_CODE_PRODU
 
 const URL = VITE_PRODUCTION === 'true' ? VITE_URL_CHECK_CODE_PRODUCTION : VITE_URL_CHECK_CODE_DEV
 
-export async function confirmCode(code){
+export default async function confirmCode(code){
     const res = await axios.post(URL,{code:code},{
         withCredentials:true
     })

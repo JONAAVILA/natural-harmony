@@ -6,7 +6,7 @@ import { validateUser } from '../../../utils/validate'
 import { saveUser } from '../../../lib/redux/actions/actions'
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
-import sendCode from '../../../adapters/sendCode'
+import { sendCode } from '../../../adapters/users'
 import setStorage from '../../../utils/setStorage'
 import './signin.form.css'
 

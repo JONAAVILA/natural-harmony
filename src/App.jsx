@@ -1,20 +1,23 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import useGetStorage from './hooks/useGetStorage'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
-import Landing from './view/landing/Landing'
-import Login from './view/login/Login'
-import Signin from './view/signin/Signin'
-import Navbar from './components/navbar/Navbar'
-import Home from './view/home/Home'
-import Error404 from './view/404/Error404'
-import Profile from './view/profile/Profile'
-import Footer from './components/footer/Footer'
-import useGetStorage from './hooks/useGetStorage'
-import Contact from './view/contact/Contact'
-import About from './view/about/About'
-import Store from './view/store/Store'
-import Validate from './view/validate/Validate'
 import './App.css'
+import Navbar from './components/navbar/Navbar'
+import Footer from './components/footer/Footer'
+import {
+        Error404,
+        About,
+        Admin,
+        Contact,
+        Home,
+        Landing,
+        Login,
+        Profile,
+        Signin,
+        Store,
+        Validate
+      } from './view'
 
 function App() {
   const getStorage = useGetStorage()
@@ -42,6 +45,7 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/store' element={<Store/>} />
         <Route path='/validate' element={<Validate/>} />
+        <Route path='/admin' element={<Admin/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>

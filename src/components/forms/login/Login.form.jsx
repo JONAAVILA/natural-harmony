@@ -1,15 +1,14 @@
 import { useFormik } from 'formik';
-import './login.form.css';
-import { validateLogin } from '../../../utils/validate';
-import postLogin from '../../../adapters/postLogin.js';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { validateLogin } from '../../../utils/validate';
+import { sendCode, postLogin } from '../../../adapters/users'
 import Alert from '../../modals/alerts/Alert.modal.jsx'
 import ValidateCode from '../../modals/validateCode/ValidateCode.modals.jsx';
-import sendCode from '../../../adapters/sendCode.js';
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle.jsx';
 import useUpdateUser from '../../../hooks/useUpdateUser.jsx';
 import setStorage from '../../../utils/setStorage.js';
+import './login.form.css';
 
 const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
