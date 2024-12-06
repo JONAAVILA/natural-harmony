@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
-import './navbar.css'
-import ButtonLenguage from '../button/buttonLenguage/ButtonLenguage'
-import ButtonMenu from '../button/buttonMenu/ButtonMenu'
+import { ButtonLenguage, ButtonMenu } from '../../components';
 import { useTranslation } from 'react-i18next'
 import imageHome from '../../assets/home.png'
 import useLogout from '../../hooks/useLogout'
+import './navbar.css'
 
 const Navbar = ({handleLenguage})=>{
     const logout = useLogout()
@@ -19,7 +18,7 @@ const Navbar = ({handleLenguage})=>{
                         <Link to={'/profile'} >
                             <img src={imageHome} alt="profile image" />
                         </Link>
-                        <button onClick={logout} className='logout_profile' >LOGOUT</button>
+                        <button onClick={logout} className='logout_profile' >SALIR</button>
                     </div>
                 <a href="/about">ABOUT</a>
             </div>

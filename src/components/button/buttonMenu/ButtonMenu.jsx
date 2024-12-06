@@ -10,7 +10,7 @@ const ButtonMenu = ()=>{
 
     return(
        <div onClick={handleToggle} className='box_menu' >
-            <div className='box_links' >
+            <div className={`box_links box_links_${toggle}`} >
                 <a href="">INGRESAR</a>
                 <a href="">SALIR</a>
             </div>
