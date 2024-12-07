@@ -10,7 +10,7 @@ import './login.form.css';
 
 const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
-    const [alert, setalert] = useState('')
+    const [alert, setalert] = useState('a')
     const [modal, setmodal] = useState(false)
     const updateUser = useUpdateUser()
 
@@ -31,7 +31,11 @@ const LoginForm = ({handleLoader})=>{
                 return
             }
             if(res === 'validate user'){
-                await sendCode()
+                const codeRes = await sendCode()
+                if(codeRes.error) {
+                    setalert(codeRes.error)
+                    return
+                }
                 setmodal(!modal)
                 return
             }
@@ -40,10 +44,15 @@ const LoginForm = ({handleLoader})=>{
             return
         }
     })
+
+    const handleAlert = ()=>{
+        setalert('')
+    }
+
     return(
         <div>
   
-                {alert && <Alert>{alert}</Alert>}
+                {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
                 {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
 
             <form

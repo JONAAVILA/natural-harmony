@@ -25,3 +25,16 @@
     background-color: #25252550;
     backdrop-filter: blur(10px);
 }
+.box_cross{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: solid 1px #313131;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transition: all ease-in-out 200ms;
+}
+.box_cross:hover{
+    transform: rotate(45deg);
+}
