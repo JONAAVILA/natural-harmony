@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import useUser from '../../hooks/useUser'
+import { useUser } from '../../hooks'
 import './profile.css'
 
 const Profile = ()=>{

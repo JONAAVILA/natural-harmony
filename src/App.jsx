@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import useGetStorage from './hooks/useGetStorage'
+import { useGetStorage } from './hooks'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import { Navbar, Footer } from './components'
 import './App.css'
-import {
+import{
         Error404,
         About,
         Admin,

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { validateLogin } from '../../../utils/validate';
 import { sendCode, postLogin } from '../../../adapters/users';
 import { Alert, ValidateCode, ButtonCircle } from '../../../components';
-import useUpdateUser from '../../../hooks/useUpdateUser.jsx';
+import { useUpdateUser }from '../../../hooks';
 import setStorage from '../../../utils/setStorage.js';
 import './login.form.css';
 

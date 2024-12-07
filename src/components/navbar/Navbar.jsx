@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom'
-import { ButtonLenguage, ButtonMenu } from '../../components';
 import { useTranslation } from 'react-i18next'
+import { ButtonLenguage, ButtonMenu } from '../../components';
 import imageHome from '../../assets/home.png'
-import useLogout from '../../hooks/useLogout'
+import { useLogout } from '../../hooks'
 import './navbar.css'
 
 const Navbar = ({handleLenguage})=>{
