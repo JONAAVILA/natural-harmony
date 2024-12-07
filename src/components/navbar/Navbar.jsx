@@ -13,14 +13,18 @@ const Navbar = ({handleLenguage})=>{
         <aside className='navbar_container' >
             <ButtonMenu/>
             <div className='box_profile' >
-                <a href="/contact">{t('contacto')}</a>
+                <Link to={'/contact'} >
+                    <p>{t('contacto')}</p>
+                </Link>
                     <div className='navbar_profile'>
                         <Link to={'/profile'} >
                             <img src={imageHome} alt="profile image" />
                         </Link>
                         <button onClick={logout} className='logout_profile' >SALIR</button>
-                    </div>
-                <a href="/about">ABOUT</a>
+                   </div>
+                <Link to={'/about'} >
+                    <p>ABOUT</p>
+                </Link>
             </div>
             <div>
                <ButtonLenguage handleLenguage={handleLenguage} />
