@@ -1,7 +1,10 @@
 import { useState } from 'react'
+import useLogout from '../../../hooks/useLogout'
+import { Link } from 'react-router-dom'
 import './buttonMenu.css'
 
 const ButtonMenu = ()=>{
+    const logout = useLogout()
     const [ toggle, setToggle ] = useState(false)
 
     const handleToggle = ()=>{
@@ -11,8 +14,16 @@ const ButtonMenu = ()=>{
     return(
        <div onClick={handleToggle} className='box_menu' >
             <div className={`box_links box_links_${toggle}`} >
-                <a href="">INGRESAR</a>
-                <a href="">SALIR</a>
+                <Link to={'/'} >
+                    <p>HOME</p>
+                </Link>
+                <Link to={'/login'} >
+                    <p>INGRESAR</p>
+                </Link>
+                <p onClick={logout} >SALIR</p>
+                <Link to={'/store'} >
+                    <p>MIS VIDEOS</p>
+                </Link>
             </div>
             <span className={`dot top ${toggle}`} />
             <span className={`dot mid${toggle}`}/>
