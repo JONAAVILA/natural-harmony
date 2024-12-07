@@ -10,7 +10,7 @@ import './login.form.css';
 
 const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
-    const [alert, setalert] = useState('a')
+    const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
     const updateUser = useUpdateUser()
 
