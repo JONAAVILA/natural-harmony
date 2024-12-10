@@ -27,7 +27,7 @@ const Login = ()=>{
                     <h3>{t('vamosAPedirteUnosDatos')}</h3>
                 </div>
                 <div className='box_input_login' >
-                    <LoginForm handleLoader={handleLoader} />
+                    <LoginForm handleLoader={handleLoader} admin={false}/>
                 </div>
             </div>
         </section>

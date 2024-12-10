@@ -7,8 +7,9 @@ import { Alert, ValidateCode, ButtonCircle } from '../../../components';
 import { useUpdateUser }from '../../../hooks';
 import setStorage from '../../../utils/setStorage.js';
 import './login.form.css';
+import postAdminLogin from '../../../adapters/users/postAdminLogin.js';
 
-const LoginForm = ({handleLoader})=>{
+const LoginForm = ({handleLoader,admin})=>{
     const navigate = useNavigate()
     const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
@@ -22,12 +23,20 @@ const LoginForm = ({handleLoader})=>{
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
             handleLoader()
-            const res = await postLogin(values)
-            if(res.name){
-                console.log('res',res)
+            if(!admin){
+                const res = await postLogin(values)
+                if(res.name){
+                    setStorage(res)
+                    updateUser(res)
+                    navigate('/home')
+                    return
+                }
+            }
+            const res = await postAdminLogin(values)
+            if(res.seller){
                 setStorage(res)
                 updateUser(res)
-                navigate('/home')
+                navigate('/admin')
                 return
             }
             if(res === 'validate user'){
