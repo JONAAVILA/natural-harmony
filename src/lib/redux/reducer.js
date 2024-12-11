@@ -3,6 +3,7 @@ import { SAVE_EMAIL, SAVE_USER, UPDATE_USER } from "./actions/actionsTypes";
 const initialState = {
     isLogin:false,
     user:{
+        seller:'',
         name:'',
         surname:'',
         email:'',
@@ -31,6 +32,7 @@ const rootReducer = (state = initialState, action)=>{
                 ...state,
                 user:{
                     ...state.user,
+                    seller:action.payload.seller,
                     name:action.payload.name,
                     surname:action.payload.surname,
                     password:action.payload.password,

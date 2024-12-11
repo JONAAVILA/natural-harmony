@@ -6,8 +6,9 @@ import { useNavigate } from "react-router-dom"
 import { confirmCode, postUser, refresh } from "../../../adapters/users"
 import { ButtonCircle, LoadIcon } from '../../../components';
 import './validateCode.modals.css'
+import postAdminLogin from "../../../adapters/users/postAdminLogin"
 
-const ValidateCode = ({validate,email,password,handleModal})=>{
+const ValidateCode = ({validate,admin,email,password,handleModal})=>{
     const [error, setError] = useState('')
     const [loader, setloader] = useState(false)
     const user = useSelector(state => state.user)
@@ -36,6 +37,15 @@ const ValidateCode = ({validate,email,password,handleModal})=>{
                     return
                 }
                 navigate('/login')
+            }
+            if(admin){
+                console.log('adminUser',user)
+                const res = await postAdminLogin(user)
+                if(!res.seller){
+                    setError('código inválido')
+                    return
+                }
+                navigate('/store')
             }
             setError('código inválido')
         }

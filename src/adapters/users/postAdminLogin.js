@@ -7,7 +7,6 @@ const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
 const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_LOGIN_PROD : VITE_URL_ADMIN_LOGIN_DEV
 
 export default async function postAdminLogin(values){
-    console.log(URL)
     const admin = {
         seller:'harmonyNatural',
         email:values.email,

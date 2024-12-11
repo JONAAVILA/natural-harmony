@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LoginForm, LoadIcon } from '../../components';
+import { LoginForm, LoadIcon } from '../../../components';
 import { useTranslation } from 'react-i18next';
 import './login.css';
 

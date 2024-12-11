@@ -23,6 +23,7 @@ const LoginForm = ({handleLoader,admin})=>{
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
             handleLoader()
+            console.log('admin',admin)
             if(!admin){
                 const res = await postLogin(values)
                 if(res.name){
@@ -33,7 +34,8 @@ const LoginForm = ({handleLoader,admin})=>{
                 }
             }
             const res = await postAdminLogin(values)
-            if(res.seller){
+            console.log('seller',res)
+            if(res.name){
                 setStorage(res)
                 updateUser(res)
                 navigate('/admin')
@@ -62,7 +64,7 @@ const LoginForm = ({handleLoader,admin})=>{
         <div>
   
                 {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-                {modal && <ValidateCode validate={true} email={formik.values.email} password={formik.values.password} />}
+                {modal && <ValidateCode validate={true} admin={admin} email={formik.values.email} password={formik.values.password} />}
 
             <form
                 onSubmit={formik.handleSubmit}

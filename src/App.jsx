@@ -17,6 +17,8 @@ import{
         Store,
         Validate
       } from './view'
+import SigninAdminView from './view/signin/admins/SigninAdminView'
+import AdminLogin from './view/login/adminS/AdminLogin'
 
 function App() {
   const getStorage = useGetStorage()
@@ -45,6 +47,8 @@ function App() {
         <Route path='/store' element={<Store/>} />
         <Route path='/validate' element={<Validate/>} />
         <Route path='/admin' element={<Admin/>} />
+        <Route path='/admin/sigin' element={<SigninAdminView/>} />
+        <Route path='/admin/login' element={<AdminLogin/>} />
       </Routes>
       <Footer/>
     </BrowserRouter>
