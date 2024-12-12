@@ -2,8 +2,14 @@ import { useFormik } from 'formik';
 import './siginAdmin.form.css';
 import { validateAdmin } from '../../../utils/validate';
 import ButtonCircle from '../../button/buttonCircle/ButtonCircle';
+import postLoginAdmin from '../../../adapters/admins/postLoginAdmin';
+import Alert from '../../modals/alerts/Alert.modal';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SigninAdmin = ()=>{
+    const [alert, setAlert] = useState(false)
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues:{
@@ -14,11 +20,25 @@ const SigninAdmin = ()=>{
             password:''
         },
         validationSchema:validateAdmin,
-        onSubmit:''
+        onSubmit: async (values)=>{
+            const res = await postLoginAdmin(values)
+            if(res.name){
+                setAlert(`Admin ${res.name} creado con exito 🚀`)
+                setTimeout(()=>{
+                    navigate('/admin')
+                },3000)
+            }
+            setAlert(res.response.error)
+        }
     })
+
+    const handleAlert = ()=>{
+        setAlert('')
+    }
 
     return(
         <div>
+              {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <form
                 onSubmit={formik.handleSubmit}
             >

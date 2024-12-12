@@ -47,7 +47,7 @@ function App() {
         <Route path='/store' element={<Store/>} />
         <Route path='/validate' element={<Validate/>} />
         <Route path='/admin' element={<Admin/>} />
-        <Route path='/admin/sigin' element={<SigninAdminView/>} />
+        <Route path='/admin/signin' element={<SigninAdminView/>} />
         <Route path='/admin/login' element={<AdminLogin/>} />
       </Routes>
       <Footer/>

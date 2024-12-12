@@ -11,6 +11,6 @@ const useGetStorage = ()=>{
     
         dispatch(updateUser(userParse))
     }
-}
+}   
 
 export default useGetStorage
