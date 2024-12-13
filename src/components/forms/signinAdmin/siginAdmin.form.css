@@ -1,0 +1,16 @@
+.create_form_admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box_signin_admin_errors{
+    height: 5px;
+    margin-bottom: 4px;
+    p{
+        font-size: 8px;
+        font-weight: 700;
+        color: #c02d2d;
+        padding-left: 12px;
+    }
+}

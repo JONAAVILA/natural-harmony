@@ -1,5 +1,4 @@
 import SigninAdmin from '../../../components/forms/signinAdmin/SigninAdmin.form'
-import './signinAdminView.css'
 
 const SigninAdminView = ()=>{
     return(

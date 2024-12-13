@@ -27,7 +27,7 @@ const SigninAdmin = ()=>{
                     navigate('/admin')
                 },3000)
             }
-            setAlert(res.response.error)
+            setAlert(res)
         }
     })
 
@@ -40,6 +40,7 @@ const SigninAdmin = ()=>{
               {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <form
                 onSubmit={formik.handleSubmit}
+                className='create_form_admin'
             >
                  <div>
                     <input
@@ -51,7 +52,7 @@ const SigninAdmin = ()=>{
                         onChange={formik.handleChange}
                         placeholder="Nombre"
                     />
-                    <div className='box_login_errors' >
+                    <div className='box_signin_admin_errors' >
                         {formik.touched.name && formik.errors.name && <p>{formik.errors.name}</p>}
                     </div>
                     <input
@@ -63,7 +64,7 @@ const SigninAdmin = ()=>{
                         onChange={formik.handleChange}
                         placeholder="Apellido"
                     />
-                    <div className='box_login_errors' >
+                    <div className='box_signin_admin_errors' >
                         {formik.touched.surname && formik.errors.surname && <p>{formik.errors.surname}</p>}
                     </div>
                     <input
@@ -75,7 +76,7 @@ const SigninAdmin = ()=>{
                         onChange={formik.handleChange}
                         placeholder="email"
                     />
-                    <div className='box_login_errors' >
+                    <div className='box_signin_admin_errors' >
                         {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
                     </div>
                     <input
@@ -87,7 +88,7 @@ const SigninAdmin = ()=>{
                         onChange={formik.handleChange}
                         placeholder="password"
                     />
-                    <div className='box_login_errors' >
+                    <div className='box_signin_admin_errors' >
                         {formik.touched.password && formik.errors.password && <p>{formik.errors.password}</p>}
                     </div>
                 </div>

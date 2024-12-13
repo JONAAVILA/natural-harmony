@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { LoginForm } from '../../../components'
-import './adminLogin.css'
 
 const AdminLogin = ()=>{
     const [loader, setloader] = useState(false)
