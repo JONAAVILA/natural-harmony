@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { validateUser } from '../../../utils/validate'
 import { saveUser } from '../../../lib/redux/actions/actions'
 import { ButtonCircle, ValidateCode } from '../../../components';
-import { sendCode } from '../../../adapters/users'
+import { sendCode } from '../../../adapters'
 import setStorage from '../../../utils/setStorage'
 import './signin.form.css'
 

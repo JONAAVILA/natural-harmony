@@ -2,12 +2,11 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateLogin } from '../../../utils/validate';
-import { sendCode, postLogin } from '../../../adapters/users';
+import { sendCode, postLogin, postAdminLogin } from '../../../adapters';
 import { Alert, ValidateCode, ButtonCircle } from '../../../components';
 import { useUpdateUser }from '../../../hooks';
 import setStorage from '../../../utils/setStorage.js';
 import './login.form.css';
-import postAdminLogin from '../../../adapters/users/postAdminLogin.js';
 
 const LoginForm = ({handleLoader,admin})=>{
     const navigate = useNavigate()

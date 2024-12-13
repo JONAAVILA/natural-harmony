@@ -15,10 +15,10 @@ import{
         Profile,
         Signin,
         Store,
-        Validate
+        Validate,
+        AdminLogin,
+        SigninAdminView
       } from './view'
-import SigninAdminView from './view/signin/admins/SigninAdminView'
-import AdminLogin from './view/login/adminS/AdminLogin'
 
 function App() {
   const getStorage = useGetStorage()
