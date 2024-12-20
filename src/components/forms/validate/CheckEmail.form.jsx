@@ -4,9 +4,8 @@ import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { saveEmail } from '../../../lib/redux/actions/actions'
 import { validateEmail } from "../../../utils/validate"
-import { confirmEmail } from '../../../adapters/users'
-import LoadIcon from "../../icons/loader/LoadIcon"
-import ButtonCircle from "../../button/buttonCircle/ButtonCircle"
+import { confirmEmail } from '../../../adapters'
+import { ButtonCircle, LoadIcon } from "../../../components"
 import './checkEmail.form.css'
 
 const CheckEmail = ()=>{

@@ -3,7 +3,6 @@ import { useGetStorage } from './hooks'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
 import { Navbar, Footer } from './components'
-import './App.css'
 import{
         Error404,
         About,
@@ -15,10 +14,11 @@ import{
         Profile,
         Signin,
         Store,
-        Validate
+        Validate,
+        AdminLogin,
+        SigninAdminView
       } from './view'
-import SigninAdminView from './view/signin/admins/SigninAdminView'
-import AdminLogin from './view/login/adminS/AdminLogin'
+import './App.css'
 
 function App() {
   const getStorage = useGetStorage()

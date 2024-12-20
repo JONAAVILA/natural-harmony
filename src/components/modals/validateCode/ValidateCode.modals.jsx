@@ -3,10 +3,9 @@ import { validateCode } from "../../../utils/validate"
 import { useFormik } from "formik"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { confirmCode, postUser, refresh } from "../../../adapters/users"
+import { confirmCode, postUser, refresh, postAdminLogin } from "../../../adapters"
 import { ButtonCircle, LoadIcon } from '../../../components';
 import './validateCode.modals.css'
-import postAdminLogin from "../../../adapters/users/postAdminLogin"
 
 const ValidateCode = ({validate,admin,email,password,handleModal})=>{
     const [error, setError] = useState('')
