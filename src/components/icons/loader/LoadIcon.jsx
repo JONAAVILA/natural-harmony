@@ -7,7 +7,7 @@ const LoadIcon = ({size})=>{
             <l-ping
             size={size}
             speed="3" 
-            color="#ffffff" 
+            color="#3d3d3d" 
             ></l-ping>
         </>
     )

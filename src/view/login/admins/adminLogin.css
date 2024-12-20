@@ -1,0 +1,6 @@
+.box_loader_admin{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
