@@ -20,10 +20,13 @@ const ButtonMenu = ()=>{
                 <Link to={'/login'} >
                     <p>INGRESAR</p>
                 </Link>
-                <p onClick={logout} >SALIR</p>
+                <Link to={'/signin'} >
+                    <p>REGISTRARSE</p>
+                </Link>
                 <Link to={'/store'} >
                     <p>MIS VIDEOS</p>
                 </Link>
+                <p onClick={logout} >SALIR</p>
             </div>
             <span className={`dot top ${toggle}`} />
             <span className={`dot mid${toggle}`}/>

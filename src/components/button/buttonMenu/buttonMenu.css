@@ -7,13 +7,16 @@
     justify-content: space-evenly;
     width: 18px;
     height: 26px;
+    p{
+        background:linear-gradient(to right, #F1EDE2,#F1EDE2,#F1EDE200);
+    }
 }
 .box_links{
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 85px;
     top: 30px;
     left: 20px;
     overflow: hidden;
@@ -26,7 +29,7 @@
 }
 .box_links_false{
     p{
-        transform: translateX(-60px);
+        transform: translateX(-65px);
         transition-delay: -200ms;
     }
 }
@@ -60,16 +63,17 @@
     }
     50%{
         transform: rotate(90deg) translateX(0);
+        width: 18px;
     }
     100%{
-        transform: rotate(90deg) translateX(55px) ;
-        width: 80px;
+        transform: rotate(90deg) translateX(65px);
+        width: 90px;
     }
 }
 @keyframes rotate_out {
     0%{
-        transform: rotate(90deg) translateX(55px);
-        width: 80px;
+        transform: rotate(90deg) translateX(65px);
+        width: 90px;
     }
     50%{
         transform: rotate(90deg) translateX(0);
@@ -105,7 +109,7 @@
 }
 @keyframes rotate_end_out{
     from{
-        transform: rotate(-45deg);
+        transform: rotate(-45deg) translateX(4px) translateY(-5px);
     }
     to{
         transform: rotate(0deg);
