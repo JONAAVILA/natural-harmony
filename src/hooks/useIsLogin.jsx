@@ -5,21 +5,44 @@ const useIsLogin = () => {
 
     return ()=>{
         const user = localStorage.getItem('user');
-        if (user) {
+        const parsedUser = JSON.parse(user);
+
+        if (user && !parsedUser.seller) {
             try {
-                const parsedUser = JSON.parse(user);
                 if (parsedUser && parsedUser.values === null && parsedUser.isValidateLogin) {
                     navigate('/login')
-                } else if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
+                    return
+                }
+                if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
                     navigate('/validate')
+                    return
                 }
             } catch (error) {
                 console.error("Error al parsear el usuario:", error)
                 navigate('/validate')
+                return
             }
-        } else {
-            navigate('/validate')
         }
+
+        if(user && parsedUser.seller){
+            try {
+                if (parsedUser && parsedUser.values.seller === null && parsedUser.isValidateLogin) {
+                    navigate('/admin/login')
+                    return
+                }
+                if (parsedUser && parsedUser.values.seller === null && !parsedUser.isValidateLogin) {
+                    navigate('/admin/signin')
+                    return
+                }
+            } catch (error) {
+                console.error("Error al parsear el usuario:", error)
+                window.alert('Ocurrió un error')
+                return
+            }
+        }
+            
+        navigate('/validate')
+        return
     }
 }
 
