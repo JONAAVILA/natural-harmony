@@ -4,7 +4,7 @@ import './store.css'
 
 const Store = ()=>{
 
-    const login = useIsLogin()
+    const login = useIsLogin('user')
     
     useEffect(()=>{
         login()
