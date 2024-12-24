@@ -1,5 +1,5 @@
 import { SigninAdmin } from '../../../components'
-import './SigninAdminView.css'
+import './signinAdminView.css'
 
 const SigninAdminView = ()=>{
     return(
