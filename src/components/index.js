@@ -8,6 +8,7 @@ export { default as Footer } from './footer/Footer'
 
 export { default as LoginForm } from './forms/login/Login.form'
 export { default as CreateUser } from './forms/signin/signin.form'
+export { default as SignInAdmin } from './forms/signinAdmin/SigninAdmin.form'
 export { default as CheckEmail } from './forms/validate/CheckEmail.form'
 
 export { default as Arrow } from './icons/arrow/Arrow.icon'
