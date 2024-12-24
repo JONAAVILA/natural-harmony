@@ -1,4 +1,4 @@
-import SigninAdmin from '../../../components/forms/signinAdmin/SigninAdmin.form'
+import { SigninAdmin } from '../../../components'
 import './SigninAdminView.css'
 
 const SigninAdminView = ()=>{
