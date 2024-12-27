@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import useIsLogin from '../../hooks/useIsLogin'
 import './admin.css'
+import { CreateProduct } from '../../components'
 
 const Admin = ()=>{
  
@@ -12,7 +13,8 @@ const Admin = ()=>{
 
     return(
         <section>
-            <h1>DASHBOARD</h1>  
+            <h1>DASHBOARD</h1>
+            <CreateProduct/>
         </section> 
     )
 }

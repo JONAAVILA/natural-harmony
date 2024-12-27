@@ -10,6 +10,7 @@ export { default as LoginForm } from './forms/login/Login.form'
 export { default as CreateUser } from './forms/signin/signin.form'
 export { default as SigninAdmin } from './forms/signinAdmin/SigninAdmin.form'
 export { default as CheckEmail } from './forms/validate/CheckEmail.form'
+export { default as CreateProduct } from './forms/createProduct/CreateProduct.form'
 
 export { default as Arrow } from './icons/arrow/Arrow.icon'
 export { default as Instagram } from './icons/instagram/Instagram'
