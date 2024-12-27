@@ -3,7 +3,7 @@ import { validateCode } from "../../../utils/validate"
 import { useFormik } from "formik"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { confirmCode, postUser, refresh, postAdminLogin } from "../../../adapters"
+import { confirmCode, postUser, refresh, postAdmin } from "../../../adapters"
 import { ButtonCircle, LoadIcon } from '../../../components';
 import './validateCode.modals.css'
 
@@ -39,7 +39,7 @@ const ValidateCode = ({validate,admin,email,password,handleModal})=>{
             }
             if(admin){
                 console.log('adminUser',user)
-                const res = await postAdminLogin(user)
+                const res = await postAdmin(user)
                 if(!res.seller){
                     setError('código inválido')
                     return

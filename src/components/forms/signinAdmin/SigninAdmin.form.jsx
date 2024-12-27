@@ -1,7 +1,7 @@
 import { useFormik } from 'formik';
 import './siginAdmin.form.css';
 import { validateAdmin } from '../../../utils/validate';
-import { postAdminLogin } from '../../../adapters';
+import { postAdmin } from '../../../adapters';
 import { Alert, ButtonCircle } from '../../../components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ const SigninAdmin = ()=>{
         },
         validationSchema:validateAdmin,
         onSubmit: async (values)=>{
-            const res = await postAdminLogin(values)
+            const res = await postAdmin(values)
             if(res.name){
                 setAlert(`Admin ${res.name} creado con exito 🚀`)
                 setTimeout(()=>{

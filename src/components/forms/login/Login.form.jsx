@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateLogin } from '../../../utils/validate';
-import { sendCode, postLogin, postAdminLogin } from '../../../adapters';
+import { sendCode, postLogin, adminLogin } from '../../../adapters';
 import { Alert, ValidateCode, ButtonCircle } from '../../../components';
 import { useUpdateUser }from '../../../hooks';
 import setStorage from '../../../utils/setStorage.js';
@@ -32,7 +32,7 @@ const LoginForm = ({handleLoader,admin})=>{
                     return
                 }
             }
-            const res = await postAdminLogin(values)
+            const res = await adminLogin(values)
             console.log('seller',res)
             if(res.name){
                 setStorage(res)

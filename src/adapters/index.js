@@ -1,4 +1,5 @@
-export { default as postAdminLogin } from './admins/postAdminLogin'
+export { default as adminLogin } from './admins/adminLogin'
+export { default as postAdmin } from './admins/postAdmin'
 export { default as createProduct } from './products/createProduct'
 export { default as confirmCode } from './users/confirmCode'
 export { default as confirmEmail } from './users/confirmEmail'
