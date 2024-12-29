@@ -35,7 +35,11 @@ const useIsLogin = (users) => {
                     navigate('/admin/signin')
                     return
                 }
-                navigate('/admin/signin')
+                if (!parsedUser && parsedUser.values.seller === null && !parsedUser.isValidateLogin) {
+                    navigate('/admin/signin')
+                    return
+                }
+                navigate('/admin')
             } catch (error) {
                 console.error("Error al parsear el usuario:", error)
                 navigate('/admin/signin')

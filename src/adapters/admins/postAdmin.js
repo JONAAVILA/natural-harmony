@@ -9,6 +9,8 @@ const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_SIGNIN_PROD : VITE_URL_A
 export default async function postAdmin(values){
     try {
         const admin = {
+            name:values.name,
+            surname:values.surname,
             seller:'harmonyNatural',
             email:values.email,
             password:values.password

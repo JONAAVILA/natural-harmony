@@ -5,9 +5,12 @@ import { postAdmin } from '../../../adapters';
 import { Alert, ButtonCircle } from '../../../components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUpdateUser } from '../../../hooks';
+import setStorage from '../../../utils/setStorage';
 
 const SigninAdmin = ()=>{
     const [alert, setAlert] = useState(false)
+    const updateUser = useUpdateUser()
     const navigate = useNavigate()
 
     const formik = useFormik({
@@ -23,11 +26,12 @@ const SigninAdmin = ()=>{
             const res = await postAdmin(values)
             if(res.name){
                 setAlert(`Admin ${res.name} creado con exito 🚀`)
+                updateUser(res)
+                setStorage(res)
                 setTimeout(()=>{
                     navigate('/admin')
                 },3000)
-            }
-            setAlert(res)
+            }else setAlert(res)
         }
     })
 

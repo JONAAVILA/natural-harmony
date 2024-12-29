@@ -5,13 +5,16 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { confirmCode, postUser, refresh, postAdmin } from "../../../adapters"
 import { ButtonCircle, LoadIcon } from '../../../components';
+import setStorage from "../../../utils/setStorage"
 import './validateCode.modals.css'
+import { useUpdateUser } from "../../../hooks"
 
 const ValidateCode = ({validate,admin,email,password,handleModal})=>{
     const [error, setError] = useState('')
     const [loader, setloader] = useState(false)
     const user = useSelector(state => state.user)
     const navigate = useNavigate()
+    const updateUser = useUpdateUser()
 
     const formik = useFormik({
         initialValues:{
@@ -41,10 +44,12 @@ const ValidateCode = ({validate,admin,email,password,handleModal})=>{
                 console.log('adminUser',user)
                 const res = await postAdmin(user)
                 if(!res.seller){
+                    updateUser(res)
+                    setStorage(res)
                     setError('código inválido')
                     return
                 }
-                navigate('/store')
+                navigate('/admin')
             }
             setError('código inválido')
         }

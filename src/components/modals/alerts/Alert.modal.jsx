@@ -2,6 +2,7 @@ import { Cross } from '../../../components'
 import './alert.modal.css'
 
 const Alert = ({children,handleAlert})=>{
+    console.log(children)
     return(
         <>
             <div onClick={handleAlert} className='container_alert_modal'>
