@@ -1,47 +1,28 @@
 import { useNavigate } from "react-router-dom";
 
-const useIsLogin = (users) => {
-    const navigate = useNavigate()
+const useIsLogin = (rols) => {
+    const navigate = useNavigate()  
 
     return ()=>{
-        const user = localStorage.getItem('user');
-        const parsedUser = JSON.parse(user);
+        const rol = localStorage.getItem(rols)
+        const parseRol = JSON.parse(rol)
 
-        if (users === 'user') {
-            try {
-                if (parsedUser && parsedUser.values === null && parsedUser.isValidateLogin) {
-                    navigate('/login')
-                    return
-                }
-                if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
-                    navigate('/validate')
-                    return
-                }
-                navigate('/validate')
-            } catch (error) {
-                console.error("Error al parsear el usuario:", error)
-                navigate('/validate')
-                return
-            }
+        if (parseRol && parseRol.user === 'user') {
+            navigate('/store')
+            return
+        }
+        if(!parseRol && rols === 'user'){
+            navigate('/login')
+            return
         }
 
-        if(users === 'admin'){
-            try {
-                if (parsedUser && parsedUser.values.seller === null && parsedUser.isValidateLogin) {
-                    navigate('/admin/login')
-                    return
-                }
-                if (parsedUser && parsedUser.values.seller === null && !parsedUser.isValidateLogin) {
-                    navigate('/admin/signin')
-                    return
-                }
-                navigate('/admin/signin')
-            } catch (error) {
-                console.error("Error al parsear el usuario:", error)
-                navigate('/admin/signin')
-                window.alert('Ocurrió un error')
-                return
-            }
+        if(parseRol && parseRol.admin === 'admin'){
+            navigate('/admin')
+            return
+        }
+        if(!parseRol && rols === 'admin'){
+            navigate('/admin/login')
+            return
         }
     }
 }

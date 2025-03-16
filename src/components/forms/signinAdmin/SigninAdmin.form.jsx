@@ -5,6 +5,7 @@ import { postAdmin } from '../../../adapters';
 import { Alert, ButtonCircle } from '../../../components';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import setStorage from '../../../utils/setStorage';
 
 const SigninAdmin = ()=>{
     const [alert, setAlert] = useState(false)
@@ -14,20 +15,21 @@ const SigninAdmin = ()=>{
         initialValues:{
             name:'',
             surname:'',
-            seller:'harmonyNatural',
             email:'',
             password:''
         },
         validationSchema:validateAdmin,
         onSubmit: async (values)=>{
             const res = await postAdmin(values)
-            if(res.name){
-                setAlert(`Admin ${res.name} creado con exito 🚀`)
+            if(res){
+                setAlert(`Se creo el admin ${res.name} 👌`)
                 setTimeout(()=>{
+                    setStorage(res,'admin')
                     navigate('/admin')
-                },3000)
+                },6000)
+            }else{
+                setAlert('Ocurrio un problema 🤷‍♂️')
             }
-            setAlert(res)
         }
     })
 

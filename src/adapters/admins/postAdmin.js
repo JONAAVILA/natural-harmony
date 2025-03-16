@@ -6,10 +6,13 @@ const VITE_URL_ADMIN_SIGNIN_PROD = import.meta.env.VITE_URL_ADMIN_SIGNIN_PROD
 
 const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_SIGNIN_PROD : VITE_URL_ADMIN_SIGNIN_DEV
 
+console.log(URL)
+
 export default async function postAdmin(values){
     try {
         const admin = {
-            seller:'harmonyNatural',
+            name:values.name,
+            surname:values.surname,
             email:values.email,
             password:values.password
         }
@@ -17,7 +20,7 @@ export default async function postAdmin(values){
         const res = await axios.post(URL,admin,{
             withCredentials:true
         })
-        console.log('postAdminLogin:',res.data)
+
         return res.data
     } catch (error) {
         return error.response.data.error
