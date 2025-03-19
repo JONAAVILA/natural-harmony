@@ -7,9 +7,16 @@
         font-size: 2rem;
     }
 }
-.box_loader_admin{
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
+.box_link_signin{
+    display: grid;
+    place-items: center;
+    width: 100%;
+    padding-top: 8px;
+    border-top: solid 1px #313131;
+    h3{
+        transition: all ease-in-out 300ms;
+    }
+}
+.box_link_signin:hover h3{
+    transform: scale(1.1);
 }

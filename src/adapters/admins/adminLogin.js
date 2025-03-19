@@ -9,7 +9,6 @@ const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_LOGIN_PROD : VITE_URL_AD
 export default async function adminLogin(values){
     try {
         const admin = {
-            seller:'harmonyNatural',
             email:values.email,
             password:values.password
         }

@@ -1,19 +1,21 @@
-import { useFormik } from 'formik';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { validateLogin } from '../../../utils/validate';
-import { sendCode, postLogin, adminLogin } from '../../../adapters';
-import { Alert, ValidateCode, ButtonCircle } from '../../../components';
-import { useUpdateUser }from '../../../hooks';
-import setStorage from '../../../utils/setStorage.js';
-import './login.form.css';
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import ValidateCode from '../../modals/validateCode/ValidateCode.modals'
+import './loginAdmin.css'
+import ButtonCircle from '../../button/buttonCircle/ButtonCircle'
+import { useFormik } from 'formik'
+import { validateLogin } from '../../../utils/validate'
+import Alert from '../../modals/alerts/Alert.modal'
+import { adminLogin, sendCode } from '../../../adapters'
+import setStorage from '../../../utils/setStorage'
+import LoadIcon from '../../icons/loader/LoadIcon'
 
-const LoginForm = ({handleLoader,admin})=>{
-    const navigate = useNavigate()
+const LoginAdmin = ()=>{
     const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
-    const updateUser = useUpdateUser()
-
+    const [loader,setLoader] = useState(false)
+    const navigate = useNavigate()
+    
     const formik = useFormik({
         initialValues:{
             email:'',
@@ -21,40 +23,25 @@ const LoginForm = ({handleLoader,admin})=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-            handleLoader()
-            if(!admin){
-                const res = await postLogin(values)
-                if(res.name){
-                    setStorage(res)
-                    updateUser(res)
-                    navigate('/home')
-                    return
-                }
-            }
-
+            setLoader(!loader)
             const res = await adminLogin(values)
-            console.log('res:',res)
+            setLoader(false)
+
             if(res.name){
                 setStorage(res)
-                updateUser(res)
-                handleLoader()
                 navigate('/admin')
-                return
             }
             if(res === 'validate user'){
-                const codeRes = await sendCode()
-                if(codeRes.error) {
-                    handleLoader()
-                    setalert(codeRes.error)
+                const resCode = await sendCode()
+                if(resCode.error) {
+                    setalert(resCode.error)
                     return
                 }
-                handleLoader()
                 setmodal(!modal)
                 return
             }
-            handleLoader()
-            setalert('Clave o correo incorrecto')
-            return
+            formik.resetForm()
+            setalert('Constraseña o email incorrectos! 🤦‍♂️')
         }
     })
 
@@ -63,11 +50,12 @@ const LoginForm = ({handleLoader,admin})=>{
     }
 
     return(
-        <div>
-  
-                {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-                {modal && <ValidateCode validate={true} admin={admin} email={formik.values.email} password={formik.values.password} />}
-
+        <section>
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
+            {modal && <ValidateCode validate={true} admin={true} email={formik.values.email} password={formik.values.password} />}
+            <div className='box_admin_loader' >
+                {loader && <LoadIcon size={80} />}
+            </div>
             <form
                 onSubmit={formik.handleSubmit}
                 className='login_form'
@@ -104,8 +92,8 @@ const LoginForm = ({handleLoader,admin})=>{
                     </ButtonCircle>
                 </div>
             </form>
-        </div>
+        </section>
     )
 }
 
-export default LoginForm
+export default LoginAdmin
