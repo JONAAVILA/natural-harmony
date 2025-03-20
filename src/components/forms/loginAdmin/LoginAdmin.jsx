@@ -23,9 +23,10 @@ const LoginAdmin = ()=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-            setLoader(!loader)
+            setLoader(true)
             const res = await adminLogin(values)
             setLoader(false)
+            console.log('form:',res)
 
             if(res.name){
                 setStorage(res)
@@ -37,10 +38,9 @@ const LoginAdmin = ()=>{
                     setalert(resCode.error)
                     return
                 }
-                setmodal(!modal)
+                handleModal()
                 return
             }
-            formik.resetForm()
             setalert('Constraseña o email incorrectos! 🤦‍♂️')
         }
     })
@@ -48,11 +48,14 @@ const LoginAdmin = ()=>{
     const handleAlert = ()=>{
         setalert('')
     }
+    const handleModal = ()=>{
+        setmodal(!modal)
+    }
 
     return(
         <section>
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-            {modal && <ValidateCode validate={true} admin={true} email={formik.values.email} password={formik.values.password} />}
+            {modal && <ValidateCode onSubmit={formik.handleSubmit} handleModal={handleModal} handleAlert={handleAlert} email={formik.values.email} password={formik.values.password} />}
             <div className='box_admin_loader' >
                 {loader && <LoadIcon size={80} />}
             </div>
