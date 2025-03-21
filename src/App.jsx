@@ -14,7 +14,6 @@ import{
         Profile,
         Signin,
         Store,
-        Validate,
         AdminLogin,
         SigninAdminView
       } from './view'
@@ -45,7 +44,6 @@ function App() {
         <Route path='/contact' element={<Contact/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/store' element={<Store/>} />
-        <Route path='/validate' element={<Validate/>} />
         <Route path='/admin' element={<Admin/>} />
         <Route path='/admin/signin' element={<SigninAdminView/>} />
         <Route path='/admin/login' element={<AdminLogin/>} />

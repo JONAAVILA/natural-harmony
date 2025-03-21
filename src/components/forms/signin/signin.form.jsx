@@ -1,4 +1,3 @@
-import { useDispatch, useSelector } from 'react-redux'
 import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { useState } from 'react'
@@ -11,15 +10,13 @@ import './signin.form.css'
 
 const CreateUser = ()=>{
     const [modal, setmodal] = useState(false)
-    const email = useSelector(state => state.user.email)
-    const dispath = useDispatch()
     const { t } = useTranslation()
 
     const formik = useFormik({
         initialValues:{
             name:'',
             surname:'',
-            email:email,
+            email:'',
             password:'',
             phone:'',
             address:'',
@@ -30,7 +27,6 @@ const CreateUser = ()=>{
         },
         validationSchema:validateUser,
         onSubmit: async (values)=>{
-            dispath(saveUser(values))
             setStorage(values)
             const resCode = await sendCode()
             if(resCode){
@@ -79,6 +75,18 @@ const CreateUser = ()=>{
                         />
                         <div className="form_user_error" >
                             {formik.touched.surname && formik.errors.surname && <p>{formik.errors.surname}</p>}
+                        </div>
+                        <input
+                            type="text"
+                            id="email"
+                            name="email"
+                            value={formik.values.email}
+                            placeholder={t('email')}
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                        />
+                        <div className="form_user_error" >
+                            {formik.touched.email && formik.errors.email && <p>{formik.errors.email}</p>}
                         </div>
                         <input
                             type="text"

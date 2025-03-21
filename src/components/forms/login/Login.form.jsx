@@ -21,7 +21,6 @@ const LoginForm = ({handleLoader})=>{
         onSubmit: async (values)=>{
             handleLoader()
             const res = await postLogin(values)
-            handleLoader()
             console.log('formlOGINuser:',res.name)
 
             if(res.name){
@@ -43,9 +42,11 @@ const LoginForm = ({handleLoader})=>{
     })
 
     const handleAlert = ()=>{
+        handleLoader()
         setalert('')
     }
     const handleModal = ()=>{
+        handleLoader()
         setmodal(!modal)
     }
 

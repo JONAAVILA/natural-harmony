@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './adminLogin.css'
-import { Link } from 'react-router-dom'
 import LoginAdmin from '../../../components/forms/loginAdmin/LoginAdmin'
+import ButtonRegistrer from '../../../components/button/buttonRegistrer/ButtonRegistrer'
 
 const AdminLogin = ()=>{
     const [loader, setloader] = useState(false)
@@ -14,11 +14,7 @@ const AdminLogin = ()=>{
         <section className="section_admin_login" >
             <h2>INGRESO ADMIN</h2>
             <LoginAdmin/>
-            <div className='box_link_signin' >
-                <Link to={'/admin/signin'} >
-                    <h3>REGISTRARSE</h3>
-                </Link>
-            </div>
+            <ButtonRegistrer path={'/admin/signin'} />
         </section>
     )
 }

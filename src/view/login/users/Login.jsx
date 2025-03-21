@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { LoginForm, LoadIcon } from '../../../components';
 import { useTranslation } from 'react-i18next';
+import ButtonRegistrer from '../../../components/button/buttonRegistrer/ButtonRegistrer';
 import './login.css';
 
 const Login = ()=>{
@@ -29,6 +30,7 @@ const Login = ()=>{
                 <div className='box_input_login' >
                     <LoginForm handleLoader={handleLoader} admin={false}/>
                 </div>
+                <ButtonRegistrer path={'/signin'} />
             </div>
         </section>
     )
