@@ -26,11 +26,12 @@ const LoginAdmin = ()=>{
             setLoader(true)
             const res = await adminLogin(values)
             setLoader(false)
-            console.log('form:',res)
+            console.log('form:',res.name)
 
             if(res.name){
-                setStorage(res)
+                setStorage(res,'admin')
                 navigate('/admin')
+                return
             }
             if(res === 'validate user'){
                 const resCode = await sendCode()
@@ -55,7 +56,15 @@ const LoginAdmin = ()=>{
     return(
         <section>
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-            {modal && <ValidateCode onSubmit={formik.handleSubmit} handleModal={handleModal} handleAlert={handleAlert} email={formik.values.email} password={formik.values.password} />}
+            {
+                modal && <ValidateCode
+                            onSubmit={formik.handleSubmit} 
+                            handleModal={handleModal} 
+                            handleAlert={handleAlert} 
+                            email={formik.values.email} 
+                            password={formik.values.password} 
+                         />
+            }
             <div className='box_admin_loader' >
                 {loader && <LoadIcon size={80} />}
             </div>

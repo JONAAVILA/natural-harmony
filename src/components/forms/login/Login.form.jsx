@@ -2,17 +2,15 @@ import { useFormik } from 'formik';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { validateLogin } from '../../../utils/validate';
-import { sendCode, postLogin, adminLogin } from '../../../adapters';
+import { sendCode, postLogin } from '../../../adapters';
 import { Alert, ValidateCode, ButtonCircle } from '../../../components';
-import { useUpdateUser }from '../../../hooks';
 import setStorage from '../../../utils/setStorage.js';
 import './login.form.css';
 
-const LoginForm = ({handleLoader,admin})=>{
+const LoginForm = ({handleLoader})=>{
     const navigate = useNavigate()
     const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
-    const updateUser = useUpdateUser()
 
     const formik = useFormik({
         initialValues:{
@@ -22,51 +20,48 @@ const LoginForm = ({handleLoader,admin})=>{
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
             handleLoader()
-            if(!admin){
-                const res = await postLogin(values)
-                if(res.name){
-                    setStorage(res)
-                    updateUser(res)
-                    navigate('/home')
-                    return
-                }
-            }
+            const res = await postLogin(values)
+            handleLoader()
+            console.log('formlOGINuser:',res.name)
 
-            const res = await adminLogin(values)
-            console.log('res:',res)
             if(res.name){
-                setStorage(res)
-                updateUser(res)
-                handleLoader()
-                navigate('/admin')
+                setStorage(res,'user')
+                navigate('/store')
                 return
             }
             if(res === 'validate user'){
-                const codeRes = await sendCode()
-                if(codeRes.error) {
-                    handleLoader()
-                    setalert(codeRes.error)
+                const resCode = await sendCode()
+                if(resCode.error) {
+                    setalert(resCode.error)
                     return
                 }
-                handleLoader()
-                setmodal(!modal)
+                handleModal()
                 return
             }
-            handleLoader()
-            setalert('Clave o correo incorrecto')
-            return
+            setalert('Constraseña o email incorrectos! 🤦‍♂️')
         }
     })
 
     const handleAlert = ()=>{
         setalert('')
     }
+    const handleModal = ()=>{
+        setmodal(!modal)
+    }
 
     return(
         <div>
   
-                {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-                {modal && <ValidateCode validate={true} admin={admin} email={formik.values.email} password={formik.values.password} />}
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
+            {
+                modal && <ValidateCode
+                            onSubmit={formik.handleSubmit} 
+                            handleModal={handleModal} 
+                            handleAlert={handleAlert} 
+                            email={formik.values.email} 
+                            password={formik.values.password} 
+                         />
+            }
 
             <form
                 onSubmit={formik.handleSubmit}
