@@ -11,9 +11,10 @@ export default async function postUser (values){
         const user = await axios.post(URL,values,{
             withCredentials:true
         })
-        console.log(user.data)
+        console.log('post user:',user.data)
         return user.data
     } catch (error) {
-        console.log(error.response.data.error)
+        console.log('post user error:', error.response.data.error)
+        return error.response.data.error
     }
 }

@@ -62,7 +62,6 @@ const LoginAdmin = ()=>{
                             handleModal={handleModal} 
                             handleAlert={handleAlert} 
                             email={formik.values.email} 
-                            password={formik.values.password} 
                          />
             }
             <div className='box_admin_loader' >

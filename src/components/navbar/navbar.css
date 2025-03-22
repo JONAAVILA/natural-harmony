@@ -3,9 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    top: 15px;
+    top: 0px;
     right: 50%;
     transform: translateX(50%);
+    padding-top: 15px;
+    background-color: #F1EDE2;
     width: 1000px;
 }
 .navbar_profile{

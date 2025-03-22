@@ -28,6 +28,9 @@ export const validateUser = Yup.object().shape({
         .max(50,'El apellido es un largo')
         .matches('^[a-zA-Z]+$','Formato inválido')
         .required('El apellido es requerido'),
+    email:Yup.string()
+        .email('Email invalido')
+        .required('El email es requerido'),
     password:Yup.string()
         .min(8,'Contraseña demasiado corta')
         .max(40,'Contraseña demasiado larga')

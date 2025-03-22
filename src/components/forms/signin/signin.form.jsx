@@ -2,14 +2,17 @@ import { useTranslation } from 'react-i18next'
 import { useFormik } from 'formik'
 import { useState } from 'react'
 import { validateUser } from '../../../utils/validate'
-import { saveUser } from '../../../lib/redux/actions/actions'
-import { ButtonCircle, ValidateCode } from '../../../components';
-import { sendCode } from '../../../adapters'
+import { Alert, ButtonCircle, LoadIcon, ValidateCode } from '../../../components';
+import { postUser, sendCode } from '../../../adapters'
 import setStorage from '../../../utils/setStorage'
 import './signin.form.css'
+import { useNavigate } from 'react-router-dom';
 
 const CreateUser = ()=>{
+    const [alert, setalert] = useState('')
     const [modal, setmodal] = useState(false)
+    const [loader,setLoader] = useState(false)
+    const navigate = useNavigate()
     const { t } = useTranslation()
 
     const formik = useFormik({
@@ -27,23 +30,51 @@ const CreateUser = ()=>{
         },
         validationSchema:validateUser,
         onSubmit: async (values)=>{
-            setStorage(values)
-            const resCode = await sendCode()
-            if(resCode){
-                setmodal(!modal)
+            setLoader(!loader)
+            const res = await postUser(values)
+            console.log('response:',res)
+            if(res.name){
+                setLoader(false)
+                setStorage(res,'user')
+                navigate('/store')
                 return
             }
-            console.log('resCode:',resCode)
+
+            if(res === 'validate user'){
+                const resCode = await sendCode()
+                if(resCode.error) {
+                    setalert(resCode.error)
+                    return
+                }
+                handleModal()
+                return
+            }
+            setLoader(false)
+            setalert(`Se produjo un error al crear el usuario! 🤦‍♂️ Error: ${res}`)
         }
     })
 
     const handleModal = ()=>{
         setmodal(!modal)
     }
+    const handleAlert = ()=>{
+        setalert(!alert)
+    }
 
     return(
         <>
-            {modal && <ValidateCode handleModal={handleModal} />}
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
+            {
+                modal && <ValidateCode
+                            onSubmit={formik.handleSubmit} 
+                            handleModal={handleModal} 
+                            handleAlert={handleAlert} 
+                            email={formik.values.email} 
+                         />
+            }
+            <div className='box_admin_loader' >
+                {loader && <LoadIcon size={80} />}
+            </div>
             <form
             onSubmit={formik.handleSubmit}
             className="create_form"
