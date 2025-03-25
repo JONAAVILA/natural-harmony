@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { useGetStorage } from './hooks'
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
 import { Navbar, Footer } from './components'
 import{
         Error404,
@@ -20,13 +18,8 @@ import{
 import './App.css'
 
 function App() {
-  const getStorage = useGetStorage()
   const { i18n } = useTranslation()
   
-  useEffect(()=>{
-    getStorage()
-  },[])
-
   const handleLenguage = (lng) =>{
     i18n.changeLanguage(lng)
   }

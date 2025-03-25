@@ -1,19 +1,19 @@
-import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import { useUser } from '../../hooks'
+import { useIsLogin } from '../../hooks'
+import getStorage from '../../utils/getStorage'
 import './profile.css'
 
 const Profile = ()=>{
-    const navigate = useNavigate()
-    const user = useUser()
+    const login = useIsLogin('user')
+    const user = getStorage('user')
+    
+    useEffect(()=>{
+        login()
+    },[])
     
     const startName = user.name?.slice(0,user.name.length / 2).toUpperCase()
     const endName = user.name?.slice(user.name.length / 2).toUpperCase()
     const surname = user.surname?.toUpperCase()
-    
-    useEffect(()=>{
-        if(!user.name) navigate('/login')
-    },[])
 
     return(
         <section>
